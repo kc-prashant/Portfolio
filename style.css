@@ -82,7 +82,7 @@ html{
     }
 }
 .navbar a:hover,.navbar a.active{
-    color: #ff00ee;
+    color: #009dff;
 }
 section{
     padding: 10rem 9% 2rem;
@@ -118,12 +118,13 @@ section{
     font-size: 3.2rem;
     font-weight: 700;
     color: transparent;
-    -webkit-text-stroke: .7px #ff00ee;
-    background: linear-gradient(#ff00ee,#ff00ee);
+    -webkit-text-stroke: .7px #00a2ff;
+    background: linear-gradient(#55ff00,#09ff00);
     background-repeat: no-repeat;
     -webkit-background-clip: text;
     background-position: -33rem 0;
     transform: translateY(-100px);
+
     opacity: 0;
     animation: textSlide 6s linear infinite,
     TopSlide 1s ease forwards;
@@ -144,7 +145,7 @@ section{
     top: 0;
     height: 100%;
     width: 0;
-    border-right: 2px solid #ff00ee;
+    border-right: 2px solid #00a2ff;
     transform: translateY(-100px);
     opacity: 0;
     animation: CursorSlide 6s linear infinite,
@@ -237,7 +238,7 @@ section{
     height: 300%;
     width: 100%;
     background: linear-gradient(
-        #0f0a0a,#ff00ee,#0f0a0a,#ff00ee
+        #0f0a0a,#00a2ff,#0f0a0a,#00a2ff
     );
     z-index: -1;
     transition: .5s ease;
@@ -284,7 +285,7 @@ section{
     height: 300%;
     width: 100%;
     background: linear-gradient(
-        #0f0a0a,#ff00ee,#0f0a0a,#ff00ee
+        #0f0a0a,#00a2ff,#0f0a0a,#00a2ff
     );
     z-index: -1;
     transition: .5s ease;
@@ -298,7 +299,7 @@ i:hover::after{
     background: rgba(255,255,255,.1);
     border: .2rem solid rgba(255,255,255,.3);
     border-radius: 50%;
-    filter: drop-shadow(0 0 8rem #ff00ee);
+    filter: drop-shadow(0 0 8rem #00a2ff);
     animation: Scale 1s ease forwards;
     scale: 0;
     animation-delay: 2s;
@@ -342,7 +343,7 @@ section.start-animation .title{
     }
 }
 .title span{
-    color: #ff00ee;
+    color: #00a2ff;
 }
 .about img{
     height: 25rem;
@@ -350,7 +351,7 @@ section.start-animation .title{
     background: rgba(255,255,255,.1);
     border: .2rem solid rgba(255,255,255,.3);
     border-radius: 50%;
-    filter: drop-shadow(0 0 8rem #ff00ee);
+    filter: drop-shadow(0 0 8rem #00a2ff);
     scale: 0;
 }
 section.start-animation .aboutImg{
@@ -461,14 +462,14 @@ section.start-animation .column h2{
 }
 
 .box{
-    border-left: .2rem solid #ff00ee;
+    border-left: .2rem solid #00a2ff;
 }
 .education-content {
     padding-left: 1.9rem;
 }
 .education-content .content{
     padding: 1.5rem;
-    border: .2rem solid #ff00ee;
+    border: .2rem solid #00a2ff;
     background: rgba(255,255,255,.1);
     border-radius: .5rem;
     margin-bottom: 2rem;
@@ -567,7 +568,7 @@ section.start-animation .skill-box2{
 .bar{
     position: absolute;
     height: 100%;
-    background: #ff00ee;
+    background: #00a2ff;
 }
 .bar-1{
     width: 90%;
@@ -613,7 +614,7 @@ section.start-animation input:nth-child(2){
     border: .2rem solid rgba(255,255,255,.3);
     outline: none;
     backdrop-filter: blur(10px);
-    filter: drop-shadow(0 0 100px #ff00ee);
+    filter: drop-shadow(0 0 100px #00a2ff);
     border-radius: .8rem;
     gap: 2.5rem;
     margin: .7rem 0;
@@ -634,11 +635,11 @@ input::placeholder{
 }
 input:focus,
 input:valid{
-    border: .2rem solid #ff00ee;
+    border: .2rem solid #00a2ff;
 }
 textarea:focus,
 textarea:valid{
-    border: .2rem solid #ff00ee;
+    border: .2rem solid #00a2ff;
 }
 textarea{
     resize: none;
@@ -654,9 +655,9 @@ section.start-animation .btn{
     animation-delay: 1.4s;
 }
 .contact .btn:hover{
-    background: #ff00ee;
-    box-shadow: 0 0 .3rem #ff00ee,
-    0 0 .7rem #ff00ee;
+    background: #00a2ff;
+    box-shadow: 0 0 .3rem #00a2ff,
+    0 0 .7rem #00a2ff;
 }
 /* footer */
 
@@ -676,7 +677,7 @@ footer i{
     justify-content: center;
     align-items: center;
     padding: .8rem;
-    background: #ff00ee;
+    background: #00a2ff;
     color: #0f0a0a;
     border-radius: 50%;
     font-size: 2.4rem;
@@ -772,7 +773,7 @@ footer i{
     justify-content: center;
     align-items: center;
     padding: .8rem;
-    background: #ff00ee;
+    background: #00a2ff;
     color: #0f0a0a;
     border-radius: 50%;
     font-size: 2.4rem;
