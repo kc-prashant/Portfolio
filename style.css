@@ -8,7 +8,7 @@
     font-family: "poppins";
     outline: none;
     border: none; 
-    color: #fff;
+    color: white;
 }
 body{
     background: #0f0a0a;
@@ -503,7 +503,15 @@ section.start-animation .column h2{
     font-size: 1.5rem;
 }
 /* skill-content */
-.services{
+.wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5rem;
+    flex-wrap: wrap;
+}
+.skills{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -512,7 +520,7 @@ section.start-animation .column h2{
 
     padding: 80px 0;
 }
-.services h2{
+.skills h2{
     font-size: 50px;
     color:  #00a2ff;
 }
