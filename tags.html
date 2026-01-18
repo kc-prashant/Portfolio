@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tags - Prashant Kc</title>
+    <meta name="description" content="Browse content by tags">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div>
+                <h1 class="site-title">
+                    <a href="/">Prashant Kc</a>
+                </h1>
+                <div class="site-info">
+                    <h2>Developer, Security Enthusiast & Technical Writer</h2>
+                    <nav class="social-nav">
+                        <ul class="flat">
+                            <li>
+                                <a href="https://github.com/yourusername" title="Github" target="_blank">
+                                    <i data-feather="github"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://linkedin.com/in/yourusername" title="LinkedIn" target="_blank">
+                                    <i data-feather="linkedin"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/yourusername" title="Twitter" target="_blank">
+                                    <i data-feather="twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:your.email@example.com" title="Email">
+                                    <i data-feather="mail"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <nav>
+                    <ul class="flat">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="posts.html">Writeups</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="tags.html">Tags</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <div class="content">
+            <h2>Tags</h2>
+            <p style="color: var(--fg2); margin-bottom: 40px;">Browse all content organized by topics and categories.
+            </p>
+
+            <div class="tag-cloud">
+                <div class="tags">
+                    <a href="posts.html?tag=security">security (15)</a>
+                    <a href="posts.html?tag=web">web (12)</a>
+                    <a href="posts.html?tag=javascript">javascript (10)</a>
+                    <a href="posts.html?tag=python">python (9)</a>
+                    <a href="posts.html?tag=tutorial">tutorial (8)</a>
+                    <a href="posts.html?tag=ctf">ctf (7)</a>
+                    <a href="posts.html?tag=react">react (6)</a>
+                    <a href="posts.html?tag=nodejs">nodejs (6)</a>
+                    <a href="posts.html?tag=api">api (5)</a>
+                    <a href="posts.html?tag=database">database (5)</a>
+                    <a href="posts.html?tag=docker">docker (4)</a>
+                    <a href="posts.html?tag=linux">linux (4)</a>
+                    <a href="posts.html?tag=jwt">jwt (3)</a>
+                    <a href="posts.html?tag=sql">sql (3)</a>
+                    <a href="posts.html?tag=xss">xss (3)</a>
+                    <a href="posts.html?tag=devops">devops (3)</a>
+                    <a href="posts.html?tag=backend">backend (2)</a>
+                    <a href="posts.html?tag=hackthebox">hackthebox (2)</a>
+                    <a href="posts.html?tag=best-practices">best-practices (2)</a>
+                </div>
+            </div>
+
+            <!-- Most Popular Tags -->
+            <h3 style="margin-top: 60px; margin-bottom: 30px;">Most Popular Topics</h3>
+
+            <div class="posts">
+                <div class="post">
+                    <a class="post-title" href="posts.html?tag=security">
+                        <i data-feather="shield"
+                            style="width:20px;height:20px;vertical-align:middle;margin-right:8px"></i>
+                        Security
+                    </a>
+                    &mdash;<span class="description">15 posts covering web security, vulnerabilities, and exploitation
+                        techniques</span>
+                </div>
+
+                <div class="post">
+                    <a class="post-title" href="posts.html?tag=web">
+                        <i data-feather="globe"
+                            style="width:20px;height:20px;vertical-align:middle;margin-right:8px"></i>
+                        Web Development
+                    </a>
+                    &mdash;<span class="description">12 posts about modern web technologies and best practices</span>
+                </div>
+
+                <div class="post">
+                    <a class="post-title" href="posts.html?tag=javascript">
+                        <i data-feather="code"
+                            style="width:20px;height:20px;vertical-align:middle;margin-right:8px"></i>
+                        JavaScript
+                    </a>
+                    &mdash;<span class="description">10 posts covering JavaScript, Node.js, and modern frameworks</span>
+                </div>
+
+                <div class="post">
+                    <a class="post-title" href="posts.html?tag=python">
+                        <i data-feather="terminal"
+                            style="width:20px;height:20px;vertical-align:middle;margin-right:8px"></i>
+                        Python
+                    </a>
+                    &mdash;<span class="description">9 posts about Python programming, security tools, and
+                        automation</span>
+                </div>
+
+                <div class="post">
+                    <a class="post-title" href="posts.html?tag=tutorial">
+                        <i data-feather="book-open"
+                            style="width:20px;height:20px;vertical-align:middle;margin-right:8px"></i>
+                        Tutorials
+                    </a>
+                    &mdash;<span class="description">8 step-by-step guides and learning resources</span>
+                </div>
+
+                <div class="post">
+                    <a class="post-title" href="posts.html?tag=ctf">
+                        <i data-feather="flag"
+                            style="width:20px;height:20px;vertical-align:middle;margin-right:8px"></i>
+                        CTF Writeups
+                    </a>
+                    &mdash;<span class="description">7 Capture The Flag challenge solutions and walkthroughs</span>
+                </div>
+            </div>
+
+            <!-- By Category -->
+            <h3 style="margin-top: 60px; margin-bottom: 30px;">Browse by Category</h3>
+
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>
+                            <i data-feather="lock"></i>
+                            Security Research
+                        </h3>
+                    </div>
+                    <p class="project-description">
+                        Vulnerability analysis, exploitation techniques, and security research findings.
+                    </p>
+                    <div class="project-tags">
+                        <span><a href="posts.html?tag=security" style="color:var(--yellow)">security</a></span>
+                        <span><a href="posts.html?tag=xss" style="color:var(--yellow)">xss</a></span>
+                        <span><a href="posts.html?tag=sql" style="color:var(--yellow)">sql</a></span>
+                        <span><a href="posts.html?tag=jwt" style="color:var(--yellow)">jwt</a></span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>
+                            <i data-feather="monitor"></i>
+                            Web Development
+                        </h3>
+                    </div>
+                    <p class="project-description">
+                        Modern web technologies, frameworks, and development best practices.
+                    </p>
+                    <div class="project-tags">
+                        <span><a href="posts.html?tag=web" style="color:var(--yellow)">web</a></span>
+                        <span><a href="posts.html?tag=react" style="color:var(--yellow)">react</a></span>
+                        <span><a href="posts.html?tag=nodejs" style="color:var(--yellow)">nodejs</a></span>
+                        <span><a href="posts.html?tag=api" style="color:var(--yellow)">api</a></span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>
+                            <i data-feather="target"></i>
+                            Penetration Testing
+                        </h3>
+                    </div>
+                    <p class="project-description">
+                        CTF challenges, HackTheBox machines, and practical penetration testing guides.
+                    </p>
+                    <div class="project-tags">
+                        <span><a href="posts.html?tag=ctf" style="color:var(--yellow)">ctf</a></span>
+                        <span><a href="posts.html?tag=hackthebox" style="color:var(--yellow)">hackthebox</a></span>
+                        <span><a href="posts.html?tag=linux" style="color:var(--yellow)">linux</a></span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>
+                            <i data-feather="server"></i>
+                            DevOps & Infrastructure
+                        </h3>
+                    </div>
+                    <p class="project-description">
+                        Container orchestration, CI/CD pipelines, and infrastructure automation.
+                    </p>
+                    <div class="project-tags">
+                        <span><a href="posts.html?tag=docker" style="color:var(--yellow)">docker</a></span>
+                        <span><a href="posts.html?tag=devops" style="color:var(--yellow)">devops</a></span>
+                        <span><a href="posts.html?tag=linux" style="color:var(--yellow)">linux</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <nav>
+                <ul class="flat">
+                    <li>© 2026 Prashant</li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="mailto:your.email@example.com">Contact</a></li>
+                    <li>[Built with ❤️ and ☕]</li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
+
+    <script>
+        feather.replace();
+    </script>
+</body>
+
+</html>

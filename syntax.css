@@ -1,0 +1,334 @@
+/* Gruvbox Syntax Highlighting */
+
+.markdown {
+padding-left: 0;
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+margin-top: 2rem;
+margin-bottom: 1rem;
+}
+
+.markdown p {
+margin-bottom: 1.2rem;
+}
+
+.markdown ul,
+.markdown ol {
+margin-bottom: 1.2rem;
+padding-left: 30px;
+}
+
+.markdown ul {
+list-style: disc;
+}
+
+.markdown ol {
+list-style: decimal;
+}
+
+.markdown li {
+margin-bottom: 0.5rem;
+line-height: 1.6;
+}
+
+.markdown strong {
+color: var(--light-yellow);
+font-weight: 700;
+}
+
+.markdown em {
+color: var(--light-purple);
+font-style: italic;
+}
+
+.metadata {
+margin: 0;
+padding-bottom: 15px;
+margin-bottom: 30px;
+border-bottom: 1px dashed var(--fg3);
+color: var(--fg3);
+font-size: 0.9rem;
+}
+
+.single-title {
+margin-bottom: 10px;
+color: var(--red);
+}
+
+/* Pagination */
+.pagination {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 15px;
+margin: 40px 0;
+padding: 0;
+list-style: none;
+}
+
+.pagination .page-link {
+color: var(--light-green);
+text-decoration: none;
+transition: color 0.3s;
+}
+
+.pagination .page-link:hover {
+color: var(--green);
+}
+
+/* Code Syntax Highlighting - Gruvbox Theme */
+
+/* Base */
+.chroma {
+color: var(--fg);
+background-color: var(--bg);
+padding: 15px;
+border-radius: 6px;
+overflow-x: auto;
+}
+
+/* Error */
+.chroma .err {
+color: var(--red);
+}
+
+/* Line numbers */
+.chroma .lnt,
+.chroma .ln {
+margin-right: 0.4em;
+padding: 0 0.4em;
+color: var(--gray);
+}
+
+/* Highlighted line */
+.chroma .hl {
+display: block;
+width: 100%;
+background-color: var(--fg3);
+}
+
+/* Keywords */
+.chroma .k,
+.chroma .kc,
+.chroma .kd,
+.chroma .kn,
+.chroma .kp,
+.chroma .kr {
+color: var(--light-red);
+font-weight: 700;
+}
+
+/* Keyword Type */
+.chroma .kt {
+color: var(--light-purple);
+}
+
+/* Names */
+.chroma .nc {
+color: var(--light-yellow);
+}
+
+.chroma .no {
+color: var(--light-blue);
+}
+
+.chroma .nf {
+color: var(--light-green);
+font-weight: 700;
+}
+
+.chroma .nv {
+color: var(--light-yellow);
+}
+
+/* Strings */
+.chroma .s,
+.chroma .sa,
+.chroma .sb,
+.chroma .sc,
+.chroma .dl,
+.chroma .sd,
+.chroma .s2,
+.chroma .se,
+.chroma .sh,
+.chroma .si,
+.chroma .sx,
+.chroma .sr,
+.chroma .s1 {
+color: var(--light-blue);
+}
+
+.chroma .ss {
+color: var(--light-orange);
+}
+
+/* Numbers */
+.chroma .m,
+.chroma .mb,
+.chroma .mf,
+.chroma .mh,
+.chroma .mi,
+.chroma .il,
+.chroma .mo {
+color: var(--light-orange);
+}
+
+/* Operators */
+.chroma .o,
+.chroma .ow {
+color: var(--green);
+}
+
+/* Comments */
+.chroma .c,
+.chroma .ch,
+.chroma .cm,
+.chroma .c1,
+.chroma .cs {
+color: var(--light-gray);
+font-style: italic;
+}
+
+.chroma .cp,
+.chroma .cpf {
+color: var(--fg);
+}
+
+/* Scrollbar for code blocks */
+.chroma::-webkit-scrollbar {
+height: 8px;
+}
+
+.chroma::-webkit-scrollbar-track {
+background-color: var(--bg2);
+border-radius: 10px;
+}
+
+.chroma::-webkit-scrollbar-thumb {
+background-color: var(--red);
+border-radius: 10px;
+}
+
+.chroma::-webkit-scrollbar-thumb:hover {
+background-color: var(--light-red);
+}
+
+/* Table of Contents */
+#TableOfContents {
+background-color: var(--bg0_h);
+border: 2px solid var(--bg3);
+border-radius: 6px;
+padding: 20px;
+margin: 30px 0;
+}
+
+#TableOfContents ul {
+padding: 0;
+list-style-type: none;
+margin: 0;
+}
+
+#TableOfContents ul ul {
+padding-left: 20px;
+margin-top: 5px;
+}
+
+#TableOfContents a {
+color: var(--fg2);
+text-decoration: none;
+transition: color 0.3s;
+}
+
+#TableOfContents a:hover {
+color: var(--light-green);
+}
+
+/* Aside/Callout boxes */
+aside {
+border: 2px solid var(--blue);
+background-color: var(--bg0_h);
+padding: 15px;
+padding-left: 20px;
+margin: 25px 0;
+display: block;
+border-radius: 6px;
+}
+
+aside::before {
+content: "💡 ";
+font-size: 1.2em;
+}
+
+/* Tables */
+table {
+table-layout: auto;
+border-collapse: collapse;
+border: 2px solid var(--blue);
+margin: 25px auto;
+width: 100%;
+max-width: 100%;
+overflow-x: auto;
+display: block;
+}
+
+thead {
+border: 2px solid var(--blue);
+background-color: var(--bg2);
+}
+
+th,
+td {
+padding: 12px 20px;
+border: 1px solid var(--blue);
+text-align: left;
+}
+
+th {
+color: var(--light-yellow);
+font-weight: 700;
+}
+
+td {
+color: var(--fg);
+}
+
+tr:hover {
+background-color: var(--bg2);
+}
+
+/* Task lists */
+.markdown input[type="checkbox"] {
+margin-right: 8px;
+}
+
+/* Footnotes */
+.footnotes {
+margin-top: 50px;
+padding-top: 20px;
+border-top: 1px solid var(--fg3);
+font-size: 0.9rem;
+color: var(--fg3);
+}
+
+.footnotes ol {
+padding-left: 25px;
+}
+
+/* Definition lists */
+dt {
+color: var(--light-yellow);
+font-weight: 700;
+margin-top: 15px;
+}
+
+dd {
+margin-left: 25px;
+margin-bottom: 10px;
+color: var(--fg2);
+}
