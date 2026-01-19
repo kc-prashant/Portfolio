@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prashant Kc - Security researcher & Penetration tester</title>
+    <title>Prashant Kc - Security Researcher & Penetration Tester</title>
     <meta name="description" content="A Blog about Security & Technology">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
+
 <body>
     <div class="container">
         <!-- Header -->
@@ -68,13 +70,13 @@
                     </div>
                     <div class="terminal-body">
                         <p><span class="prompt">$</span> whoami</p>
-                        <p class="output">Penetration Tester | Security Researcher </p>
+                        <p class="output">Penetration Tester | Security Researcher</p>
                         <p><span class="prompt">$</span> cat intro.txt</p>
                         <p class="output">I test for security issues.</p>
                         <p class="output">Passionate about cybersecurity, clean code, and sharing knowledge.</p>
                         <p><span class="prompt">$</span> ls -la skills/</p>
                         <p class="output">
-                            Python • Burpsuite • Kali linux • Security • CTFs
+                            Python • Burpsuite • Kali Linux • Security • CTFs
                         </p>
                         <p><span class="prompt cursor">█</span></p>
                     </div>
@@ -103,71 +105,7 @@
 
             <!-- Recent Writeups -->
             <h2>Recent Writeups</h2>
-            <div class="posts">
-                <div class="post">
-                    <div class="post-metadata">
-                        2026-01-15 | <i data-feather="clock" style="width:12px;height:12px"></i> 5min
-                    </div>
-                    <a class="post-title" href="post.html?id=jwt-security">Exploiting JWT Vulnerabilities in Modern Web Apps</a>
-                    &mdash;<span class="description">A deep dive into JSON Web Token security flaws and exploitation techniques</span>
-                    <div class="post-tags tags">
-                        <a href="tags.html?tag=security">security</a>
-                        <a href="tags.html?tag=web">web</a>
-                        <a href="tags.html?tag=jwt">jwt</a>
-                    </div>
-                </div>
-
-                <div class="post">
-                    <div class="post-metadata">
-                        2026-01-10 | <i data-feather="clock" style="width:12px;height:12px"></i> 8min
-                    </div>
-                    <a class="post-title" href="post.html?id=sql-injection">Advanced SQL Injection Techniques</a>
-                    &mdash;<span class="description">Exploring blind SQL injection, time-based attacks, and bypass methods</span>
-                    <div class="post-tags tags">
-                        <a href="tags.html?tag=security">security</a>
-                        <a href="tags.html?tag=sql">sql</a>
-                        <a href="tags.html?tag=database">database</a>
-                    </div>
-                </div>
-
-                <div class="post">
-                    <div class="post-metadata">
-                        2026-01-05 | <i data-feather="clock" style="width:12px;height:12px"></i> 6min
-                    </div>
-                    <a class="post-title" href="post.html?id=react-hooks">Building Custom React Hooks for Complex State</a>
-                    &mdash;<span class="description">Learn how to create reusable React hooks for managing complex application state</span>
-                    <div class="post-tags tags">
-                        <a href="tags.html?tag=react">react</a>
-                        <a href="tags.html?tag=javascript">javascript</a>
-                        <a href="tags.html?tag=tutorial">tutorial</a>
-                    </div>
-                </div>
-
-                <div class="post">
-                    <div class="post-metadata">
-                        2025-12-28 | <i data-feather="clock" style="width:12px;height:12px"></i> 4min
-                    </div>
-                    <a class="post-title" href="post.html?id=csrf-explained">Understanding CSRF Attacks and Prevention</a>
-                    &mdash;<span class="description">Cross-Site Request Forgery explained with practical examples and mitigation strategies</span>
-                    <div class="post-tags tags">
-                        <a href="tags.html?tag=security">security</a>
-                        <a href="tags.html?tag=web">web</a>
-                    </div>
-                </div>
-
-                <div class="post">
-                    <div class="post-metadata">
-                        2025-12-20 | <i data-feather="clock" style="width:12px;height:12px"></i> 7min
-                    </div>
-                    <a class="post-title" href="post.html?id=docker-security">Docker Container Security Best Practices</a>
-                    &mdash;<span class="description">Essential security practices for containerized applications and infrastructure</span>
-                    <div class="post-tags tags">
-                        <a href="tags.html?tag=docker">docker</a>
-                        <a href="tags.html?tag=security">security</a>
-                        <a href="tags.html?tag=devops">devops</a>
-                    </div>
-                </div>
-            </div>
+            <div class="posts" id="recent-posts"></div>
 
             <div class="view-all">
                 <a href="posts.html" class="btn-secondary">View All Writeups →</a>
@@ -176,26 +114,6 @@
             <!-- Featured Projects -->
             <h2>Featured Projects</h2>
             <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>
-                            <i data-feather="code"></i>
-                            SecureAuth API
-                        </h3>
-                        <a href="https://github.com/yourusername/project" target="_blank">
-                            <i data-feather="github"></i>
-                        </a>
-                    </div>
-                    <p class="project-description">
-                        Production-ready authentication API with JWT, OAuth2, and rate limiting. Built with Node.js and Redis.
-                    </p>
-                    <div class="project-tags">
-                        <span>Node.js</span>
-                        <span>JWT</span>
-                        <span>Redis</span>
-                        <span>Security</span>
-                    </div>
-                </div>
 
                 <div class="project-card">
                     <div class="project-header">
@@ -203,12 +121,13 @@
                             <i data-feather="shield"></i>
                             VulnScanner
                         </h3>
-                        <a href="https://github.com/yourusername/project" target="_blank">
+                        <a href="https://github.com/yourusername/vuln-scanner" target="_blank">
                             <i data-feather="github"></i>
                         </a>
                     </div>
                     <p class="project-description">
-                        Automated web vulnerability scanner for finding common security issues. Written in Python.
+                        Automated web vulnerability scanner that detects SQL injection, XSS, CSRF, and other common
+                        security issues.
                     </p>
                     <div class="project-tags">
                         <span>Python</span>
@@ -220,22 +139,45 @@
                 <div class="project-card">
                     <div class="project-header">
                         <h3>
-                            <i data-feather="database"></i>
+                            <i data-feather="bar-chart-2"></i>
                             DataViz Dashboard
                         </h3>
-                        <a href="https://github.com/yourusername/project" target="_blank">
+                        <a href="https://github.com/yourusername/dataviz-dashboard" target="_blank">
                             <i data-feather="github"></i>
                         </a>
                     </div>
                     <p class="project-description">
-                        Real-time analytics dashboard with interactive charts and data visualization. React + D3.js.
+                        Real-time analytics dashboard with interactive charts and live data filtering. Built with React,
+                        D3.js, and WebSocket.
                     </p>
                     <div class="project-tags">
                         <span>React</span>
                         <span>D3.js</span>
-                        <span>TypeScript</span>
+                        <span>WebSocket</span>
                     </div>
                 </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>
+                            <i data-feather="shopping-cart"></i>
+                            College Cart
+                        </h3>
+                        <a href="https://collegecart.page.gd" target="_blank" title="Visit website">
+                            <i data-feather="link"></i>
+                        </a>
+                    </div>
+
+                    <p class="project-description">
+                        E-commerce platform for college students to buy and sell textbooks, electronics, and supplies.
+                    </p>
+                    <div class="project-tags">
+                        <span>PHP</span>
+                        <span>PostgreSQL</span>
+                        <span>Stripe</span>
+                    </div>
+                </div>
+
             </div>
 
             <div class="view-all">
@@ -247,7 +189,7 @@
         <footer>
             <nav>
                 <ul class="flat">
-                    <li>© 2026 Prashant </li>
+                    <li>© 2026 Prashant</li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="mailto:your.email@example.com">Contact</a></li>
                     <li>[Built with ❤️ and ☕]</li>
@@ -256,8 +198,52 @@
         </footer>
     </div>
 
+    <!-- Scripts -->
+    <script src="posts.js"></script>
     <script>
+        function generatePostHTML(postId, post) {
+            const tagsHTML = post.tags.map(tag =>
+                `<a href="tags.html?tag=${encodeURIComponent(tag)}">${tag}</a>`
+            ).join('\n                        ');
+
+            return `
+                <div class="post">
+                    <div class="post-metadata">
+                        ${post.date} | <i data-feather="clock" style="width:12px;height:12px"></i> ${post.readTime}
+                    </div>
+                    <a class="post-title" href="post.html?id=${postId}">${post.title}</a>
+                    &mdash;<span class="description">${post.description}</span>
+                    <div class="post-tags tags">
+                        ${tagsHTML}
+                    </div>
+                </div>
+            `;
+        }
+
+        function loadRecentPosts() {
+            const postsContainer = document.getElementById('recent-posts');
+
+            const postsArray = Object.keys(postsData).map(id => ({
+                id: id,
+                ...postsData[id]
+            }));
+
+            postsArray.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+            const recentPosts = postsArray.slice(0, 5);
+
+            const postsHTML = recentPosts.map(post =>
+                generatePostHTML(post.id, post)
+            ).join('');
+
+            postsContainer.innerHTML = postsHTML;
+
+            feather.replace();
+        }
+
+        loadRecentPosts();
         feather.replace();
     </script>
 </body>
+
 </html>
