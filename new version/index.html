@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Prashant Kc - Security Researcher & Programmer from Nepal">
+    <meta name="keywords" content="Prashant Kc, prashantkc46, cybersecurity, penetration tester, programmer">
+    <meta name="author" content="Prashant Kc">
+    <title>Prashant Kc</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;700;900&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ── Gruvbox-inspired palette ── */
+        :root {
+            --bg:        #0d1117;
+            --bg1:       #161b22;
+            --bg2:       #21262d;
+            --bg3:       #30363d;
+            --fg:        #e6edf3;
+            --fg2:       #b1bac4;
+            --fg3:       #8b949e;
+            --red:       #ff7b72;
+            --green:     #3fb950;
+            --green-dim: #238636;
+            --yellow:    #d29922;
+            --blue:      #58a6ff;
+            --purple:    #bc8cff;
+            --aqua:      #39d0d8;
+            --orange:    #ffa657;
+            --pink:      #f778ba;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inconsolata', monospace;
+            background: var(--bg);
+            color: var(--fg);
+            font-size: 16px;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* ── Scrollbar ── */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg1); }
+        ::-webkit-scrollbar-thumb { background: var(--bg3); border-radius: 3px; }
+
+        /* ── Container ── */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+        /* ─────────────────────────────────────────
+           HEADER / NAV
+        ───────────────────────────────────────── */
+        header {
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 999;
+            background: rgba(13,17,23,.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--bg3);
+            padding: 14px 0;
+            transition: background .3s;
+        }
+
+        header .inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--green);
+            text-decoration: none;
+            letter-spacing: -.02em;
+        }
+        .logo span { color: var(--fg3); }
+
+        nav ul { display: flex; list-style: none; gap: 6px; }
+        nav a {
+            color: var(--fg2);
+            text-decoration: none;
+            font-size: .9rem;
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: all .2s;
+            border: 1px solid transparent;
+        }
+        nav a:hover, nav a.active {
+            color: var(--green);
+            border-color: var(--green-dim);
+            background: rgba(63,185,80,.08);
+        }
+
+        #hamburger {
+            display: none;
+            background: none;
+            border: 1px solid var(--bg3);
+            color: var(--fg);
+            padding: 6px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        /* ─────────────────────────────────────────
+           HERO
+        ───────────────────────────────────────── */
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 60px;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(63,185,80,.1);
+            border: 1px solid var(--green-dim);
+            color: var(--green);
+            padding: 4px 14px;
+            border-radius: 999px;
+            font-size: .8rem;
+            margin-bottom: 20px;
+        }
+        .hero-tag::before { content:"●"; font-size:.5rem; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+        .hero-name {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: clamp(2.4rem, 5vw, 4rem);
+            font-weight: 900;
+            line-height: 1.1;
+            color: var(--fg);
+            margin-bottom: 10px;
+        }
+        .hero-name .highlight { color: var(--green); }
+
+        .hero-role {
+            font-size: 1.15rem;
+            color: var(--orange);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero-desc {
+            color: var(--fg2);
+            font-size: .97rem;
+            max-width: 520px;
+            margin-bottom: 32px;
+            line-height: 1.8;
+        }
+
+        .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 36px; }
+
+        .btn-primary {
+            background: var(--green);
+            color: #0d1117;
+            padding: 11px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: .9rem;
+            text-decoration: none;
+            transition: all .2s;
+            font-family: 'Inconsolata', monospace;
+        }
+        .btn-primary:hover { background: #2ea043; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(63,185,80,.25); }
+
+        .btn-outline {
+            border: 1px solid var(--bg3);
+            color: var(--fg2);
+            padding: 11px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: .9rem;
+            text-decoration: none;
+            transition: all .2s;
+            font-family: 'Inconsolata', monospace;
+        }
+        .btn-outline:hover { border-color: var(--blue); color: var(--blue); transform: translateY(-2px); }
+
+        .hero-socials { display: flex; gap: 12px; }
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px; height: 40px;
+            border-radius: 8px;
+            border: 1px solid var(--bg3);
+            color: var(--fg3);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all .2s;
+        }
+        .social-link:hover { border-color: var(--green); color: var(--green); background: rgba(63,185,80,.08); }
+        .social-link svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+        /* Terminal */
+        .terminal {
+            background: var(--bg1);
+            border: 1px solid var(--bg3);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 0 60px rgba(63,185,80,.08), 0 20px 60px rgba(0,0,0,.5);
+        }
+        .term-bar {
+            background: var(--bg2);
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .dot.r { background: #ff5f57; }
+        .dot.y { background: #febc2e; }
+        .dot.g { background: #28c840; }
+        .term-title { margin-left: auto; color: var(--fg3); font-size: .8rem; }
+
+        .term-body { padding: 22px 20px; font-size: .92rem; }
+        .term-line { margin-bottom: 6px; display: flex; align-items: flex-start; gap: 6px; }
+        .term-line.out { padding-left: 18px; color: var(--fg2); }
+        .prompt { color: var(--green); font-weight: 700; white-space: nowrap; }
+        .cmd { color: var(--fg); }
+        .val-blue { color: var(--blue); }
+        .val-yellow { color: var(--yellow); }
+        .val-orange { color: var(--orange); }
+        .val-purple { color: var(--purple); }
+        .val-aqua { color: var(--aqua); }
+        .cursor {
+            display: inline-block;
+            background: var(--green);
+            width: 9px; height: 1.1em;
+            vertical-align: text-bottom;
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+        /* ─────────────────────────────────────────
+           SECTION COMMON
+        ───────────────────────────────────────── */
+        section { padding: 100px 0; }
+
+        .section-header { margin-bottom: 48px; }
+        .section-label {
+            color: var(--green);
+            font-size: .8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .12em;
+            margin-bottom: 8px;
+        }
+        .section-label::before { content: "// "; color: var(--fg3); }
+        .section-title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--fg);
+        }
+        .section-title span { color: var(--green); }
+
+        /* ─────────────────────────────────────────
+           ABOUT
+        ───────────────────────────────────────── */
+        /* about terminal layout */
+        .about-terminal-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+            align-items: start;
+        }
+
+        .about-terminal {
+            background: var(--bg1);
+            border: 1px solid var(--bg3);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 0 40px rgba(63,185,80,.06), 0 16px 48px rgba(0,0,0,.4);
+        }
+
+        .about-terminal .term-bar {
+            background: var(--bg2);
+            padding: 11px 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .about-terminal .term-title { margin-left: auto; color: var(--fg3); font-size: .8rem; }
+
+        .about-term-body {
+            padding: 22px 20px;
+            font-size: .9rem;
+            line-height: 1.7;
+        }
+
+        .aterm-line { display: flex; align-items: flex-start; gap: 7px; margin-bottom: 5px; }
+        .aterm-line.gap { margin-top: 14px; }
+        .aterm-line.out { padding-left: 20px; color: var(--fg2); }
+        .aterm-line.comment { padding-left: 20px; color: var(--fg3); font-style: italic; }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+        .stat-card {
+            background: var(--bg1);
+            border: 1px solid var(--bg3);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: all .25s;
+        }
+        .stat-card:hover { border-color: var(--yellow); transform: translateY(-3px); }
+        .stat-num { font-size: 2rem; font-weight: 900; color: var(--yellow); font-family: 'JetBrains Mono', monospace; }
+        .stat-lbl { font-size: .78rem; color: var(--fg3); text-transform: uppercase; letter-spacing: .08em; margin-top: 4px; }
+
+        .about-right-col { display: flex; flex-direction: column; gap: 20px; }
+
+        /* ─────────────────────────────────────────
+           EDUCATION
+        ───────────────────────────────────────── */
+        .edu-timeline { position: relative; padding-left: 32px; }
+        .edu-timeline::before {
+            content: "";
+            position: absolute; left: 10px; top: 0; bottom: 0;
+            width: 2px; background: linear-gradient(to bottom, var(--green), var(--blue), var(--purple));
+            border-radius: 2px;
+        }
+
+        .edu-item {
+            position: relative;
+            margin-bottom: 36px;
+        }
+        .edu-item::before {
+            content: "";
+            position: absolute;
+            left: -26px; top: 20px;
+            width: 14px; height: 14px;
+            border-radius: 50%;
+            background: var(--pink);
+            border: 2px solid var(--bg);
+            box-shadow: 0 0 12px var(--pink);
+        }
+
+        .edu-card {
+            background: var(--bg1);
+            border: 1px solid var(--bg3);
+            border-radius: 10px;
+            padding: 22px 24px;
+            transition: all .25s;
+        }
+        .edu-card:hover { border-color: var(--blue); transform: translateX(4px); }
+
+        .edu-year {
+            color: var(--pink);
+            font-size: .82rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .edu-degree {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--fg);
+            margin-bottom: 4px;
+        }
+        .edu-school { color: var(--fg3); font-size: .9rem; }
+
+        /* ─────────────────────────────────────────
+           SKILLS
+        ───────────────────────────────────────── */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: var(--bg1);
+            border: 1px solid var(--bg3);
+            border-radius: 12px;
+            padding: 26px;
+            transition: all .3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .skill-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent 60%, rgba(63,185,80,.04));
+            pointer-events: none;
+        }
+        .skill-card:hover { border-color: var(--green); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(63,185,80,.1); }
+
+        .skill-icon { font-size: 1.8rem; margin-bottom: 14px; }
+        .skill-name {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--green);
+            margin-bottom: 10px;
+        }
+        .skill-desc { color: var(--fg3); font-size: .87rem; line-height: 1.6; }
+
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+        .tag {
+            background: var(--bg2);
+            color: var(--fg3);
+            border: 1px solid var(--bg3);
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-size: .78rem;
+        }
+
+        /* ─────────────────────────────────────────
+           PROJECTS
+        ───────────────────────────────────────── */
+        .proj-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 22px;
+        }
+
+        .proj-card {
+            background: var(--bg1);
+            border: 1px solid var(--bg3);
+            border-radius: 12px;
+            padding: 28px;
+            transition: all .3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .proj-card:hover { border-color: var(--blue); transform: translateY(-5px); box-shadow: 0 16px 48px rgba(88,166,255,.1); }
+
+        .proj-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 14px;
+        }
+        .proj-icon { font-size: 1.6rem; }
+        .proj-link {
+            color: var(--fg3);
+            transition: color .2s;
+            display: inline-flex;
+        }
+        .proj-link:hover { color: var(--green); }
+        .proj-link svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+        .proj-name {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--blue);
+            margin-bottom: 10px;
+        }
+        .proj-desc { color: var(--fg2); font-size: .9rem; line-height: 1.65; flex: 1; margin-bottom: 18px; }
+
+        .proj-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+        .proj-tags span { background: var(--bg2); border: 1px solid var(--bg3); color: var(--fg3); padding: 3px 10px; border-radius: 4px; font-size: .78rem; }
+
+        /* ─────────────────────────────────────────
+           CONTACT
+        ───────────────────────────────────────── */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .contact-info { display: flex; flex-direction: column; gap: 16px; }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: var(--bg1);
+            border: 1px solid var(--bg3);
+            border-radius: 10px;
+            padding: 16px 20px;
+            text-decoration: none;
+            color: var(--fg2);
+            transition: all .25s;
+            font-size: .92rem;
+        }
+        .contact-item:hover { border-color: var(--green); color: var(--green); transform: translateX(4px); }
+        .contact-item svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; color: var(--green); }
+
+        .contact-form { display: flex; flex-direction: column; gap: 14px; }
+
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+        .form-group { display: flex; flex-direction: column; gap: 6px; }
+        .form-group label { color: var(--fg3); font-size: .82rem; }
+
+        .form-group input,
+        .form-group textarea {
+            background: var(--bg1);
+            border: 1px solid var(--bg3);
+            color: var(--fg);
+            padding: 12px 14px;
+            border-radius: 8px;
+            font-family: 'Inconsolata', monospace;
+            font-size: .92rem;
+            transition: border-color .2s;
+            width: 100%;
+            resize: vertical;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px rgba(63,185,80,.1); }
+        .form-group input::placeholder,
+        .form-group textarea::placeholder { color: var(--fg3); }
+
+        .form-submit {
+            background: var(--green);
+            color: #0d1117;
+            border: none;
+            padding: 13px 28px;
+            border-radius: 8px;
+            font-family: 'Inconsolata', monospace;
+            font-weight: 700;
+            font-size: .95rem;
+            cursor: pointer;
+            transition: all .2s;
+            align-self: flex-start;
+        }
+        .form-submit:hover { background: #2ea043; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(63,185,80,.25); }
+
+        /* ─────────────────────────────────────────
+           FOOTER
+        ───────────────────────────────────────── */
+        footer {
+            border-top: 1px solid var(--bg3);
+            padding: 36px 0;
+            text-align: center;
+        }
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .footer-copy { color: var(--fg3); font-size: .85rem; }
+        .footer-copy span { color: var(--green); }
+
+        .footer-socials { display: flex; gap: 10px; }
+
+        /* ─────────────────────────────────────────
+           DIVIDER
+        ───────────────────────────────────────── */
+        .sec-divider {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 48px;
+        }
+        .sec-divider::after { content:""; flex:1; height:1px; background:var(--bg3); }
+
+        /* ─────────────────────────────────────────
+           RESPONSIVE
+        ───────────────────────────────────────── */
+        @media (max-width: 880px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+            .terminal { display: none; }
+            .about-terminal-wrap { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 600px) {
+            section { padding: 70px 0; }
+            .form-row { grid-template-columns: 1fr; }
+            nav ul { display: none; flex-direction: column; position: absolute; top: 66px; left: 0; right: 0; background: var(--bg1); border-bottom: 1px solid var(--bg3); padding: 16px 24px; gap: 4px; }
+            nav ul.open { display: flex; }
+            #hamburger { display: block; }
+        }
+
+        /* ── Fade-in animation on scroll ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity .6s ease, transform .6s ease;
+        }
+        .reveal.visible { opacity: 1; transform: none; }
+
+        /* Stagger children */
+        .stagger > * { opacity: 0; transform: translateY(20px); transition: opacity .5s ease, transform .5s ease; }
+        .stagger.visible > *:nth-child(1) { opacity:1; transform:none; transition-delay:.05s }
+        .stagger.visible > *:nth-child(2) { opacity:1; transform:none; transition-delay:.15s }
+        .stagger.visible > *:nth-child(3) { opacity:1; transform:none; transition-delay:.25s }
+        .stagger.visible > *:nth-child(4) { opacity:1; transform:none; transition-delay:.35s }
+        .stagger.visible > *:nth-child(5) { opacity:1; transform:none; transition-delay:.45s }
+        .stagger.visible > *:nth-child(6) { opacity:1; transform:none; transition-delay:.55s }
+    </style>
+</head>
+
+<body>
+
+<!-- ── HEADER ── -->
+<header>
+    <div class="inner">
+        <a href="#home" class="logo">prashant<span>.kc</span></a>
+        <nav id="nav">
+            <ul id="nav-links">
+                <li><a href="#home" class="active">~/home</a></li>
+                <li><a href="#about">~/about</a></li>
+                <li><a href="#education">~/education</a></li>
+                <li><a href="#skills">~/skills</a></li>
+                <li><a href="#projects">~/projects</a></li>
+                <li><a href="#contact">~/contact</a></li>
+            </ul>
+        </nav>
+        <button id="hamburger" aria-label="Toggle menu">☰</button>
+    </div>
+</header>
+
+<!-- ── HOME ── -->
+<section id="home">
+    <div class="container">
+        <div class="hero-grid">
+            <div class="hero-left">
+                <div class="hero-tag">Available for freelance</div>
+                <h1 class="hero-name">
+                    I'm <span class="highlight">Prashant Kc</span>
+                </h1>
+                <p class="hero-role">Programmer · Security Enthusiast · Freelancer</p>
+                <p class="hero-desc">
+                    A passionate self-taught programmer from Nepal with a strong interest in web development, cybersecurity, and problem-solving. Currently pursuing a BCA and learning Java &amp; Python for security research. My goal: build efficient, secure, and user-friendly applications.
+                </p>
+                <div class="hero-btns">
+                    <a href="mailto:46prashant46@gmail.com" class="btn-primary">Hire Me</a>
+                    <a href="mailto:46prashant46@gmail.com" class="btn-outline">Let's Talk</a>
+                </div>
+                <div class="hero-socials">
+                    <!-- GitHub -->
+                    <a href="https://github.com/kc-prashant/" target="_blank" class="social-link" title="GitHub">
+                        <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/prashant-kc-57ab20241/" target="_blank" class="social-link" title="LinkedIn">
+                        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/cosmic_prashant/" target="_blank" class="social-link" title="Instagram">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/share/14x29YPDoj/" target="_blank" class="social-link" title="Facebook">
+                        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Terminal widget -->
+            <div class="terminal reveal">
+                <div class="term-bar">
+                    <span class="dot r"></span>
+                    <span class="dot y"></span>
+                    <span class="dot g"></span>
+                    <span class="term-title">prashant@kali:~</span>
+                </div>
+                <div class="term-body">
+                    <div class="term-line"><span class="prompt">$</span><span class="cmd"> whoami</span></div>
+                    <div class="term-line out"><span class="val-blue">Prashant Kc</span> — Programmer &amp; Security Enthusiast</div>
+
+                    <div class="term-line" style="margin-top:10px"><span class="prompt">$</span><span class="cmd"> cat info.json</span></div>
+                    <div class="term-line out">&#123;</div>
+                    <div class="term-line out">&nbsp;&nbsp;<span class="val-yellow">"location"</span>: <span class="val-aqua">"Nepal 🇳🇵"</span>,</div>
+                    <div class="term-line out">&nbsp;&nbsp;<span class="val-yellow">"role"</span>: <span class="val-aqua">"BCA Student (Running)"</span>,</div>
+                    <div class="term-line out">&nbsp;&nbsp;<span class="val-yellow">"email"</span>: <span class="val-aqua">"46prashant46@gmail.com"</span>,</div>
+                    <div class="term-line out">&nbsp;&nbsp;<span class="val-yellow">"status"</span>: <span class="val-orange">"open to freelance"</span></div>
+                    <div class="term-line out">&#125;</div>
+
+                    <div class="term-line" style="margin-top:10px"><span class="prompt">$</span><span class="cmd"> ls skills/</span></div>
+                    <div class="term-line out">
+                        <span class="val-purple">Python</span>&nbsp;&nbsp;
+                        <span class="val-orange">Kali Linux</span>&nbsp;&nbsp;
+                        <span class="val-blue">HTML/CSS</span>&nbsp;&nbsp;
+                        <span class="val-aqua">Digital Marketing</span>
+                    </div>
+
+                    <div class="term-line" style="margin-top:10px"><span class="prompt">$</span><span class="cmd"> ./passion.sh</span></div>
+                    <div class="term-line out">🔒 Cybersecurity &amp; Ethical Hacking</div>
+                    <div class="term-line out">🌐 Web Development</div>
+                    <div class="term-line out">🧩 Problem Solving</div>
+
+                    <div class="term-line" style="margin-top:10px"><span class="prompt cursor"></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+    <div class="container">
+        <div class="section-header reveal">
+            <p class="section-label">get_to_know_me</p>
+            <h2 class="section-title">About <span>Me</span></h2>
+        </div>
+
+        <div class="about-terminal-wrap">
+
+            <!-- Big terminal on the left -->
+            <div class="about-terminal reveal">
+                <div class="term-bar">
+                    <span class="dot r"></span>
+                    <span class="dot y"></span>
+                    <span class="dot g"></span>
+                    <span class="term-title">prashant@kali: ~/about</span>
+                </div>
+                <div class="about-term-body">
+
+                    <div class="aterm-line"><span class="prompt">$</span><span class="cmd"> whoami</span></div>
+                    <div class="aterm-line out"><span class="val-blue">prashant_kc</span> &mdash; Programmer &amp; Security Enthusiast</div>
+
+                    <div class="aterm-line gap"><span class="prompt">$</span><span class="cmd"> cat about.txt</span></div>
+                    <div class="aterm-line out">Hey! I'm a self-taught programmer from Nepal</div>
+                    <div class="aterm-line out">with a growing obsession for cybersecurity.</div>
+                    <div class="aterm-line out">I love understanding how systems work, how they</div>
+                    <div class="aterm-line out">can be exploited, and how to protect them.</div>
+
+                    <div class="aterm-line gap"><span class="prompt">$</span><span class="cmd"> cat freelancer.txt</span></div>
+                    <div class="aterm-line out">Seeking freelance opportunities to utilize my</div>
+                    <div class="aterm-line out">skills, deliver top-notch work, and build</div>
+                    <div class="aterm-line out">lasting client relationships. Dedicated to</div>
+                    <div class="aterm-line out">quality, communication &amp; exceeding expectations.</div>
+
+                    <div class="aterm-line gap"><span class="prompt">$</span><span class="cmd"> ls -la skills/</span></div>
+                    <div class="aterm-line out">
+                        <span class="val-purple">python</span>&nbsp;&nbsp;
+                        <span class="val-orange">kali-linux</span>&nbsp;&nbsp;
+                        <span class="val-blue">html-css-js</span>&nbsp;&nbsp;
+                        <span class="val-aqua">digital-mktg</span>
+                    </div>
+
+                    <div class="aterm-line gap"><span class="prompt">$</span><span class="cmd"> cat interests.json</span></div>
+                    <div class="aterm-line out">&#123;</div>
+                    <div class="aterm-line out">&nbsp;&nbsp;<span class="val-yellow">"primary"</span>: <span class="val-aqua">"Cybersecurity &amp; Ethical Hacking"</span>,</div>
+                    <div class="aterm-line out">&nbsp;&nbsp;<span class="val-yellow">"secondary"</span>: <span class="val-aqua">"Web Development"</span>,</div>
+                    <div class="aterm-line out">&nbsp;&nbsp;<span class="val-yellow">"currently_learning"</span>: <span class="val-aqua">"Java, Python"</span>,</div>
+                    <div class="aterm-line out">&nbsp;&nbsp;<span class="val-yellow">"tools"</span>: <span class="val-aqua">"Kali, Burp Suite, Nmap, Metasploit"</span></div>
+                    <div class="aterm-line out">&#125;</div>
+
+                    <div class="aterm-line gap"><span class="prompt">$</span><span class="cmd"> ./status.sh</span></div>
+                    <div class="aterm-line out"><span style="color:var(--green)">&#9679;</span> Available for freelance work</div>
+                    <div class="aterm-line out"><span style="color:var(--green)">&#9679;</span> Open to collaboration</div>
+                    <div class="aterm-line out"><span style="color:var(--yellow)">&#9679;</span> BCA &mdash; Running (Nepalaya)</div>
+
+                    <div class="aterm-line gap"><span class="prompt cursor"></span></div>
+                </div>
+            </div>
+
+            <!-- Right column: id terminal + stats -->
+            <div class="about-right-col reveal">
+
+                <div class="about-terminal">
+                    <div class="term-bar">
+                        <span class="dot r"></span>
+                        <span class="dot y"></span>
+                        <span class="dot g"></span>
+                        <span class="term-title">id.sh</span>
+                    </div>
+                    <div class="about-term-body">
+                        <div class="aterm-line"><span class="prompt">$</span><span class="cmd"> cat personal_info.conf</span></div>
+                        <div class="aterm-line out"><span class="val-yellow">NAME</span>=<span class="val-aqua">"Prashant Kc"</span></div>
+                        <div class="aterm-line out"><span class="val-yellow">LOCATION</span>=<span class="val-aqua">"Nepal &#127475;&#127477;"</span></div>
+                        <div class="aterm-line out"><span class="val-yellow">EMAIL</span>=<span class="val-aqua">"46prashant46@gmail.com"</span></div>
+                        <div class="aterm-line out"><span class="val-yellow">GITHUB</span>=<span class="val-aqua">"kc-prashant"</span></div>
+                        <div class="aterm-line out"><span class="val-yellow">INSTAGRAM</span>=<span class="val-aqua">"cosmic_prashant"</span></div>
+                        <div class="aterm-line out"><span class="val-yellow">STATUS</span>=<span style="color:var(--green)">"open_to_hire"</span></div>
+                        <div class="aterm-line gap"><span class="prompt cursor"></span></div>
+                    </div>
+                </div>
+
+                <div class="stat-grid stagger">
+                    <div class="stat-card">
+                        <div class="stat-num">5+</div>
+                        <div class="stat-lbl">Projects</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-num">1+</div>
+                        <div class="stat-lbl">Yr Experience</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-num">&#8734;</div>
+                        <div class="stat-lbl">Curiosity</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-num">&#9749;</div>
+                        <div class="stat-lbl">Coffee</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── EDUCATION ── -->
+<section id="education">
+    <div class="container">
+        <div class="section-header reveal">
+            <p class="section-label">academic_path</p>
+            <h2 class="section-title">My <span>Education</span></h2>
+        </div>
+        <div class="edu-timeline reveal">
+            <div class="edu-item">
+                <div class="edu-card">
+                    <div class="edu-year">📅 2006 – 2019</div>
+                    <div class="edu-degree">Secondary Level (SLC)</div>
+                    <div class="edu-school">Shree Himalayan English Secondary Boarding School</div>
+                </div>
+            </div>
+            <div class="edu-item">
+                <div class="edu-card">
+                    <div class="edu-year">📅 2019 – 2021</div>
+                    <div class="edu-degree">Higher Secondary (+2) — Computer Science</div>
+                    <div class="edu-school">ED-Mark Academy</div>
+                </div>
+            </div>
+            <div class="edu-item">
+                <div class="edu-card">
+                    <div class="edu-year">📅 2022 – Present</div>
+                    <div class="edu-degree">Bachelor of Computer Applications (BCA) — Running</div>
+                    <div class="edu-school">Nepalaya Education Foundation</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── SKILLS ── -->
+<section id="skills">
+    <div class="container">
+        <div class="section-header reveal">
+            <p class="section-label">what_i_know</p>
+            <h2 class="section-title">My <span>Skills</span></h2>
+        </div>
+        <div class="skills-grid stagger">
+            <div class="skill-card">
+                <div class="skill-icon">🐍</div>
+                <div class="skill-name">Python</div>
+                <p class="skill-desc">Scripting, automation, and cybersecurity tooling. Proficient in OOP, working with libraries, and building efficient back-end solutions.</p>
+                <div class="skill-tags">
+                    <span class="tag">Scripting</span>
+                    <span class="tag">Automation</span>
+                    <span class="tag">OOP</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🔐</div>
+                <div class="skill-name">Kali Linux</div>
+                <p class="skill-desc">Penetration testing, vulnerability assessment, and digital forensics. Experienced with Metasploit, Nmap, Wireshark, and Burp Suite.</p>
+                <div class="skill-tags">
+                    <span class="tag">PenTest</span>
+                    <span class="tag">Nmap</span>
+                    <span class="tag">Burp Suite</span>
+                    <span class="tag">Metasploit</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🌐</div>
+                <div class="skill-name">HTML / CSS / JS</div>
+                <p class="skill-desc">Building well-structured, semantic, and responsive web layouts with cross-browser compatibility and an eye for clean UX.</p>
+                <div class="skill-tags">
+                    <span class="tag">HTML5</span>
+                    <span class="tag">CSS3</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Responsive</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">📢</div>
+                <div class="skill-name">Digital Marketing</div>
+                <p class="skill-desc">Data-driven marketing strategies, brand awareness campaigns, and lead generation with a focus on measurable, optimized results.</p>
+                <div class="skill-tags">
+                    <span class="tag">SEO</span>
+                    <span class="tag">Analytics</span>
+                    <span class="tag">Social Media</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── PROJECTS ── -->
+<section id="projects">
+    <div class="container">
+        <div class="section-header reveal">
+            <p class="section-label">things_i_built</p>
+            <h2 class="section-title">Featured <span>Projects</span></h2>
+        </div>
+        <div class="proj-grid stagger">
+            <div class="proj-card">
+                <div class="proj-head">
+                    <div class="proj-icon">🛡️</div>
+                    <a href="https://github.com/kc-prashant/" target="_blank" class="proj-link" title="GitHub">
+                        <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    </a>
+                </div>
+                <div class="proj-name">VulnScanner</div>
+                <p class="proj-desc">Automated web vulnerability scanner that detects SQL injection, XSS, CSRF, and other common security issues in web applications.</p>
+                <div class="proj-tags">
+                    <span>Python</span><span>Security</span><span>Automation</span>
+                </div>
+            </div>
+
+            <div class="proj-card">
+                <div class="proj-head">
+                    <div class="proj-icon">🛒</div>
+                    <a href="https://collegecart.page.gd" target="_blank" class="proj-link" title="Visit site">
+                        <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </a>
+                </div>
+                <div class="proj-name">College Cart</div>
+                <p class="proj-desc">E-commerce platform for college students to buy and sell textbooks, electronics, and supplies with a clean, user-friendly interface.</p>
+                <div class="proj-tags">
+                    <span>PHP</span><span>PostgreSQL</span><span>E-commerce</span>
+                </div>
+            </div>
+
+            <div class="proj-card">
+                <div class="proj-head">
+                    <div class="proj-icon">📊</div>
+                    <a href="https://github.com/kc-prashant/" target="_blank" class="proj-link" title="GitHub">
+                        <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    </a>
+                </div>
+                <div class="proj-name">DataViz Dashboard</div>
+                <p class="proj-desc">Real-time analytics dashboard with interactive charts, live data filtering, and WebSocket-powered updates for dynamic data visualization.</p>
+                <div class="proj-tags">
+                    <span>React</span><span>D3.js</span><span>WebSocket</span>
+                </div>
+            </div>
+
+            <div class="proj-card">
+                <div class="proj-head">
+                    <div class="proj-icon">🔍</div>
+                    <a href="https://github.com/kc-prashant/" target="_blank" class="proj-link" title="GitHub">
+                        <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    </a>
+                </div>
+                <div class="proj-name">Network Recon Tool</div>
+                <p class="proj-desc">Python-based network reconnaissance utility wrapping Nmap for fast host discovery, port scanning, and service fingerprinting reports.</p>
+                <div class="proj-tags">
+                    <span>Python</span><span>Nmap</span><span>Networking</span>
+                </div>
+            </div>
+
+            <div class="proj-card">
+                <div class="proj-head">
+                    <div class="proj-icon">🌐</div>
+                    <a href="https://prashantkc46.com.np" target="_blank" class="proj-link" title="Visit site">
+                        <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </a>
+                </div>
+                <div class="proj-name">Personal Portfolio</div>
+                <p class="proj-desc">My personal portfolio website showcasing my projects, skills, and education — built with vanilla HTML, CSS, and JavaScript with smooth animations.</p>
+                <div class="proj-tags">
+                    <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+    <div class="container">
+        <div class="section-header reveal">
+            <p class="section-label">get_in_touch</p>
+            <h2 class="section-title">Contact <span>Me</span></h2>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info reveal">
+                <a href="mailto:46prashant46@gmail.com" class="contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    46prashant46@gmail.com
+                </a>
+                <a href="https://github.com/kc-prashant/" target="_blank" class="contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    github.com/kc-prashant
+                </a>
+                <a href="https://www.linkedin.com/in/prashant-kc-57ab20241/" target="_blank" class="contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    linkedin.com/in/prashant-kc
+                </a>
+                <a href="https://www.instagram.com/cosmic_prashant/" target="_blank" class="contact-item">
+                    <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    @cosmic_prashant
+                </a>
+            </div>
+
+            <form class="contact-form reveal" action="https://formspree.io/f/xeoakaan" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">// name</label>
+                        <input type="text" id="name" name="name" placeholder="Your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">// email</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">// phone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Mobile number">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">// subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">// message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+                </div>
+                <button type="submit" class="form-submit">$ send_message →</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+    <div class="container">
+        <div class="footer-inner">
+            <p class="footer-copy">© 2026 <span>Prashant Kc</span> · Built with ❤️ &amp; ☕ from Nepal</p>
+            <div class="footer-socials">
+                <a href="https://github.com/kc-prashant/" target="_blank" class="social-link" title="GitHub">
+                    <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/prashant-kc-57ab20241/" target="_blank" class="social-link" title="LinkedIn">
+                    <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+                <a href="https://www.instagram.com/cosmic_prashant/" target="_blank" class="social-link" title="Instagram">
+                    <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // ── Mobile nav ──
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+    // ── Active nav link on scroll ──
+    const sections  = document.querySelectorAll('section[id]');
+    const navItems  = document.querySelectorAll('header nav a');
+
+    function updateActive() {
+        const scrollY = window.scrollY + 120;
+        sections.forEach(sec => {
+            if (scrollY >= sec.offsetTop && scrollY < sec.offsetTop + sec.offsetHeight) {
+                navItems.forEach(a => a.classList.remove('active'));
+                const link = document.querySelector(`header nav a[href="#${sec.id}"]`);
+                if (link) link.classList.add('active');
+            }
+        });
+        // close mobile nav on scroll
+        navLinks.classList.remove('open');
+    }
+    window.addEventListener('scroll', updateActive, { passive: true });
+
+    // ── Reveal on scroll ──
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal, .stagger').forEach(el => observer.observe(el));
+
+    // ── Trigger home elements immediately ──
+    document.querySelectorAll('#home .reveal, #home .stagger').forEach(el => el.classList.add('visible'));
+</script>
+
+</body>
+</html>
