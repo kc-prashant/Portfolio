@@ -1,10 +1,10 @@
-// ── Mobile nav toggle ──
+// Mobile nav toggle
 const hamburger = document.getElementById('hamburger');
 const navLinks  = document.getElementById('nav-links');
 
 hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
 
-// ── Active nav link on scroll ──
+// Active nav link on scroll 
 const sections = document.querySelectorAll('section[id]');
 const navItems = document.querySelectorAll('header nav a');
 
@@ -25,7 +25,7 @@ function updateActive() {
 
 window.addEventListener('scroll', updateActive, { passive: true });
 
-// ── Scroll reveal with IntersectionObserver ──
+// Scroll reveal with IntersectionObserver
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
         if (e.isIntersecting) e.target.classList.add('visible');
@@ -34,5 +34,5 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal, .stagger').forEach(el => observer.observe(el));
 
-// ── Trigger home section reveals immediately (above the fold) ──
+// Trigger home section reveals immediately (above the fold)
 document.querySelectorAll('#home .reveal, #home .stagger').forEach(el => el.classList.add('visible'));

@@ -1,4 +1,4 @@
-/* ── Gruvbox-inspired palette ── */
+/*  Colors */
 :root {
     --bg:        #0d1117;
     --bg1:       #161b22;
@@ -30,17 +30,16 @@ body {
     overflow-x: hidden;
 }
 
-/* ── Scrollbar ── */
+/*  Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg1); }
 ::-webkit-scrollbar-thumb { background: var(--bg3); border-radius: 3px; }
 
-/* ── Container ── */
+/* Container  */
 .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
-/* ─────────────────────────────────────────
-   HEADER / NAV
-───────────────────────────────────────── */
+/* HEADER / NAV */
+
 header {
     position: fixed; top: 0; left: 0; width: 100%; z-index: 999;
     background: rgba(13,17,23,.85);
@@ -96,9 +95,7 @@ nav a:hover, nav a.active {
     font-size: 1.1rem;
 }
 
-/* ─────────────────────────────────────────
-   HERO
-───────────────────────────────────────── */
+/* HERO */
 #home {
     min-height: 100vh;
     display: flex;
@@ -198,7 +195,7 @@ nav a:hover, nav a.active {
 .social-link:hover { border-color: var(--green); color: var(--green); background: rgba(63,185,80,.08); }
 .social-link svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
-/* ── Terminal (Hero) ── */
+/* Terminal (Hero) */
 .terminal {
     background: var(--bg1);
     border: 1px solid var(--bg3);
@@ -238,9 +235,7 @@ nav a:hover, nav a.active {
 }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 
-/* ─────────────────────────────────────────
-   SECTION COMMON
-───────────────────────────────────────── */
+/* SECTION COMMON */
 section { padding: 100px 0; }
 
 .section-header { margin-bottom: 48px; }
@@ -261,9 +256,7 @@ section { padding: 100px 0; }
 }
 .section-title span { color: var(--green); }
 
-/* ─────────────────────────────────────────
-   ABOUT
-───────────────────────────────────────── */
+/*  ABOUT */
 .about-terminal-wrap {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -318,9 +311,7 @@ section { padding: 100px 0; }
 .stat-num { font-size: 2rem; font-weight: 900; color: var(--yellow); font-family: 'JetBrains Mono', monospace; }
 .stat-lbl { font-size: .78rem; color: var(--fg3); text-transform: uppercase; letter-spacing: .08em; margin-top: 4px; }
 
-/* ─────────────────────────────────────────
-   EDUCATION
-───────────────────────────────────────── */
+/* EDUCATION */
 .edu-timeline { position: relative; padding-left: 32px; }
 .edu-timeline::before {
     content: "";
@@ -354,9 +345,7 @@ section { padding: 100px 0; }
 .edu-degree { font-size: 1.1rem; font-weight: 700; color: var(--fg); margin-bottom: 4px; }
 .edu-school { color: var(--fg3); font-size: .9rem; }
 
-/* ─────────────────────────────────────────
-   SKILLS
-───────────────────────────────────────── */
+/* SKILLS */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -401,9 +390,7 @@ section { padding: 100px 0; }
     font-size: .78rem;
 }
 
-/* ─────────────────────────────────────────
-   PROJECTS
-───────────────────────────────────────── */
+/*  PROJECTS */
 .proj-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -444,9 +431,7 @@ section { padding: 100px 0; }
 .proj-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .proj-tags span { background: var(--bg2); border: 1px solid var(--bg3); color: var(--fg3); padding: 3px 10px; border-radius: 4px; font-size: .78rem; }
 
-/* ─────────────────────────────────────────
-   CONTACT
-───────────────────────────────────────── */
+/* CONTACT */
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -510,9 +495,7 @@ section { padding: 100px 0; }
 }
 .form-submit:hover { background: #2ea043; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(63,185,80,.25); }
 
-/* ─────────────────────────────────────────
-   FOOTER
-───────────────────────────────────────── */
+/* FOOTER */
 footer {
     border-top: 1px solid var(--bg3);
     padding: 36px 0;
@@ -528,9 +511,7 @@ footer {
 .footer-copy span { color: var(--green); }
 .footer-socials { display: flex; gap: 10px; }
 
-/* ─────────────────────────────────────────
-   RESPONSIVE
-───────────────────────────────────────── */
+/* RESPONSIVE */
 @media (max-width: 880px) {
     .hero-grid { grid-template-columns: 1fr; gap: 40px; }
     .terminal { display: none; }
@@ -555,7 +536,7 @@ footer {
     #hamburger { display: block; }
 }
 
-/* ── Scroll reveal ── */
+/* Scroll reveal */
 .reveal {
     opacity: 0;
     transform: translateY(28px);
@@ -563,7 +544,7 @@ footer {
 }
 .reveal.visible { opacity: 1; transform: none; }
 
-/* ── Stagger children ── */
+/* Stagger children  */
 .stagger > * { opacity: 0; transform: translateY(20px); transition: opacity .5s ease, transform .5s ease; }
 .stagger.visible > *:nth-child(1) { opacity: 1; transform: none; transition-delay: .05s; }
 .stagger.visible > *:nth-child(2) { opacity: 1; transform: none; transition-delay: .15s; }
