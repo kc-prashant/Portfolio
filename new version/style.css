@@ -312,13 +312,13 @@ section { padding: 100px 0; }
 .stat-lbl { font-size: .78rem; color: var(--fg3); text-transform: uppercase; letter-spacing: .08em; margin-top: 4px; }
 
 /* EDUCATION */
-.edu-timeline { position: relative; padding-left: 32px; }
+/* .edu-timeline { position: relative; padding-left: 32px; }
 .edu-timeline::before {
     content: "";
     position: absolute; left: 10px; top: 0; bottom: 0;
     width: 2px; background: linear-gradient(to bottom, var(--green), var(--blue), var(--purple));
     border-radius: 2px;
-}
+}   */
 
 .edu-item { position: relative; margin-bottom: 36px; }
 .edu-item::before {
