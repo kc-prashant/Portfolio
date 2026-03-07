@@ -3,250 +3,515 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Prashant Kc - Security Researcher & Penetration Tester</title>
-    <meta name="description" content="A Blog about Security & Technology">
-    <meta name="google-site-verification" content="k2S1s9VQe03UPRFMb0UtnuPFFcrhEpHvQQnF8e8t3Xk" />
-    <meta name="keywords" content="Prashant Kc, prashantkc46, prashantkc46.com.np , kc prashant, prashantkc, kcprashant , kcprashantkc , prashant codes ">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Prashant Kc - Security Researcher & Programmer from Nepal">
+    <meta name="keywords" content="Prashant Kc, prashantkc46, cybersecurity, penetration tester, programmer">
+    <meta name="author" content="Prashant Kc">
+    <title>Prashant Kc</title>
 
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="main.css">
-    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;700;900&family=JetBrains+Mono:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header>
-            <div>
-                <h1 class="site-title">
-                    <a href="/">Prashant Kc</a>
-                </h1>
-                <div class="site-info">
-                    <h2>Security Enthusiast & Penetration Tester</h2>
-                    <nav class="social-nav">
-                        <ul class="flat">
-                            <li>
-                                <a href="https://github.com/kc-prashant" title="Github" target="_blank">
-                                    <i data-feather="github"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.linkedin.com/in/prashankc46/" title="LinkedIn" target="_blank">
-                                    <i data-feather="linkedin"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://twitter.com/yourusername" title="Twitter" target="_blank">
-                                    <i data-feather="twitter"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="mailto:weebprashant@gmail.com" title="Email">
-                                    <i data-feather="mail"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <nav>
-                    <ul class="flat">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="posts.html">Writeups</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="about.html">About</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
 
-        <!-- Hero Section -->
-        <div class="content">
-            <div class="hero-section">
-                <div class="terminal-window">
-                    <div class="terminal-header">
-                        <span class="terminal-dot red"></span>
-                        <span class="terminal-dot yellow"></span>
-                        <span class="terminal-dot green"></span>
-                    </div>
-                    <div class="terminal-body">
-                        <p><span class="prompt">$</span> whoami</p>
-                        <p class="output">Penetration Tester | Security Researcher</p>
-                        <p><span class="prompt">$</span> cat intro.txt</p>
-                        <p class="output">I test for security issues.</p>
-                        <p class="output">Passionate about cybersecurity, clean code, and sharing knowledge.</p>
-                        <p><span class="prompt">$</span> ls -la skills/</p>
-                        <p class="output">
-                            Python • Burpsuite • Kali Linux • Security • CTFs
-                        </p>
-                        <p><span class="prompt cursor">█</span></p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Stats Section -->
-            <div class="stats-grid">
-                <div class="stat-box">
-                    <div class="stat-number">5+</div>
-                    <div class="stat-label">Projects</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">Writeups</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">1+</div>
-                    <div class="stat-label">Years Experience</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">∞</div>
-                    <div class="stat-label">Coffee Consumed</div>
-                </div>
-            </div>
-
-            <!-- Recent Writeups -->
-            <h2>Recent Writeups</h2>
-            <div class="posts" id="recent-posts"></div>
-
-            <div class="view-all">
-                <a href="posts.html" class="btn-secondary">View All Writeups →</a>
-            </div>
-
-            <!-- Featured Projects -->
-            <h2>Featured Projects</h2>
-            <div class="project-grid">
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>
-                            <i data-feather="shield"></i>
-                            VulnScanner
-                        </h3>
-                        <a href="https://github.com/yourusername/vuln-scanner" target="_blank">
-                            <i data-feather="github"></i>
-                        </a>
-                    </div>
-                    <p class="project-description">
-                        Automated web vulnerability scanner that detects SQL injection, XSS, CSRF, and other common
-                        security issues.
-                    </p>
-                    <div class="project-tags">
-                        <span>Python</span>
-                        <span>Security</span>
-                        <span>Automation</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>
-                            <i data-feather="bar-chart-2"></i>
-                            DataViz Dashboard
-                        </h3>
-                        <a href="https://github.com/yourusername/dataviz-dashboard" target="_blank">
-                            <i data-feather="github"></i>
-                        </a>
-                    </div>
-                    <p class="project-description">
-                        Real-time analytics dashboard with interactive charts and live data filtering. Built with React,
-                        D3.js, and WebSocket.
-                    </p>
-                    <div class="project-tags">
-                        <span>React</span>
-                        <span>D3.js</span>
-                        <span>WebSocket</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>
-                            <i data-feather="shopping-cart"></i>
-                            College Cart
-                        </h3>
-                        <a href="https://collegecart.page.gd" target="_blank" title="Visit website">
-                            <i data-feather="link"></i>
-                        </a>
-                    </div>
-
-                    <p class="project-description">
-                        E-commerce platform for college students to buy and sell textbooks, electronics, and supplies.
-                    </p>
-                    <div class="project-tags">
-                        <span>PHP</span>
-                        <span>PostgreSQL</span>
-                        <span>Stripe</span>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="view-all">
-                <a href="portfolio.html" class="btn-secondary">View All Projects →</a>
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <footer>
-            <nav>
-                <ul class="flat">
-                    <li>© 2026 Prashant</li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="mailto:your.email@example.com">Contact</a></li>
-                    <li>[Built with ❤️ and ☕]</li>
+    <!-- HEADER  -->
+    <header>
+        <div class="inner">
+            <a href="#home" class="logo">prashant<span>.kc</span></a>
+            <nav id="nav">
+                <ul id="nav-links">
+                    <li><a href="#home" class="active">~/home</a></li>
+                    <li><a href="#about">~/about</a></li>
+                    <li><a href="#education">~/education</a></li>
+                    <li><a href="#skills">~/skills</a></li>
+                    <li><a href="#projects">~/projects</a></li>
+                    <li><a href="#contact">~/contact</a></li>
                 </ul>
             </nav>
-        </footer>
-    </div>
+            <button id="hamburger" aria-label="Toggle menu">&#9776;</button>
+        </div>
+    </header>
 
-    <!-- Scripts -->
-    <script src="posts.js"></script>
-    <script>
-        function generatePostHTML(postId, post) {
-            const tagsHTML = post.tags.map(tag =>
-                `<a href="tags.html?tag=${encodeURIComponent(tag)}">${tag}</a>`
-            ).join('\n                        ');
-
-            return `
-                <div class="post">
-                    <div class="post-metadata">
-                        ${post.date} | <i data-feather="clock" style="width:12px;height:12px"></i> ${post.readTime}
+    <!-- HOME -->
+    <section id="home">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-left">
+                    <h1 class="hero-name">
+                        I'm <span class="highlight">Prashant Kc</span>
+                    </h1>
+                    <p class="hero-role">Programmer &middot; Security Enthusiast &middot; Web-Security</p>
+                    <p class="hero-desc">
+                        A passionate self-taught programmer from Nepal with a strong interest in web development,
+                        cybersecurity, and problem-solving. Currently pursuing a BCA and learning Java &amp; Python
+                        for security research. My goal: build efficient, secure, and user-friendly applications.
+                    </p>
+                    <div class="hero-btns">
+                        <a href="mailto:46prashant46@gmail.com" class="btn-primary">Hire Me</a>
+                        <a href="mailto:46prashant46@gmail.com" class="btn-outline">Let's Talk</a>
                     </div>
-                    <a class="post-title" href="post.html?id=${postId}">${post.title}</a>
-                    &mdash;<span class="description">${post.description}</span>
-                    <div class="post-tags tags">
-                        ${tagsHTML}
+                    <div class="hero-socials">
+                        <a href="https://github.com/kc-prashant/" target="_blank" class="social-link" title="GitHub">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/prashant-kc-57ab20241/" target="_blank" class="social-link"
+                            title="LinkedIn">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
-            `;
-        }
 
-        function loadRecentPosts() {
-            const postsContainer = document.getElementById('recent-posts');
+                <!-- Terminal widget -->
+                <div class="terminal reveal">
+                    <div class="term-bar">
+                        <span class="dot r"></span>
+                        <span class="dot y"></span>
+                        <span class="dot g"></span>
+                        <span class="term-title">prashant@kali:~</span>
+                    </div>
+                    <div class="term-body">
+                        <div class="term-line"><span class="prompt">$</span><span class="cmd"> whoami</span></div>
+                        <div class="term-line out"><span class="val-blue">Prashant Kc</span> &mdash; Programmer &amp;
+                            Security Enthusiast</div>
 
-            const postsArray = Object.keys(postsData).map(id => ({
-                id: id,
-                ...postsData[id]
-            }));
+                        <div class="term-line" style="margin-top:10px"><span class="prompt">$</span><span class="cmd">
+                                cat info.json</span></div>
+                        <div class="term-line out">&#123;</div>
+                        <div class="term-line out">&nbsp;&nbsp;<span class="val-yellow">"location"</span>: <span
+                                class="val-aqua">"Nepal &#127475;&#127477;"</span>,</div>
+                        <div class="term-line out">&nbsp;&nbsp;<span class="val-yellow">"role"</span>: <span
+                                class="val-aqua">"BCA Student (Running)"</span>,</div>
+                        <div class="term-line out">&nbsp;&nbsp;<span class="val-yellow">"email"</span>: <span
+                                class="val-aqua">"46prashant46@gmail.com"</span>,</div>
+                        <div class="term-line out">&#125;</div>
 
-            postsArray.sort((a, b) => new Date(b.date) - new Date(a.date));
+                        <div class="term-line" style="margin-top:10px"><span class="prompt">$</span><span class="cmd">
+                                ls skills/</span></div>
+                        <div class="term-line out">
+                            <span class="val-purple">Python</span>&nbsp;&nbsp;
+                            <span class="val-orange">Kali Linux</span>&nbsp;&nbsp;
+                            <span class="val-blue">HTML/CSS</span>&nbsp;&nbsp;
+                            <span class="val-aqua">Web-Security</span>
+                        </div>
 
-            const recentPosts = postsArray.slice(0, 5);
+                        <div class="term-line" style="margin-top:10px"><span class="prompt">$</span><span class="cmd">
+                                ./passion.sh</span></div>
+                        <div class="term-line out">&#128274; Cybersecurity &amp; Ethical Hacking</div>
+                        <div class="term-line out">&#127760; Web Development</div>
+                        <div class="term-line out">&#129513; Problem Solving</div>
 
-            const postsHTML = recentPosts.map(post =>
-                generatePostHTML(post.id, post)
-            ).join('');
+                        <div class="term-line" style="margin-top:10px"><span class="prompt cursor"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            postsContainer.innerHTML = postsHTML;
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-label">get_to_know_me</p>
+                <h2 class="section-title">About <span>Me</span></h2>
+            </div>
 
-            feather.replace();
-        }
+            <div class="about-terminal-wrap">
 
-        loadRecentPosts();
-        feather.replace();
-    </script>
+                <!-- Main terminal -->
+                <div class="about-terminal reveal">
+                    <div class="term-bar">
+                        <span class="dot r"></span>
+                        <span class="dot y"></span>
+                        <span class="dot g"></span>
+                        <span class="term-title">prashant@kali: ~/about</span>
+                    </div>
+                    <div class="about-term-body">
+                        <div class="aterm-line"><span class="prompt">$</span><span class="cmd"> whoami</span></div>
+                        <div class="aterm-line out"><span class="val-blue">prashant_kc</span> &mdash; Programmer &amp;
+                            Security Enthusiast</div>
+
+                        <div class="aterm-line gap"><span class="prompt">$</span><span class="cmd"> cat about.txt</span>
+                        </div>
+                        <div class="aterm-line out">Hey! I'm a self-taught programmer from Nepal</div>
+                        <div class="aterm-line out">with a growing obsession for cybersecurity.</div>
+                        <div class="aterm-line out">I love understanding how systems work, how they</div>
+                        <div class="aterm-line out">can be exploited, and how to protect them.</div>
+
+                        <div class="aterm-line gap"><span class="prompt">$</span><span class="cmd"> cat
+                                freelancer.txt</span></div>
+                        <div class="aterm-line out">Seeking freelance opportunities to utilize my</div>
+                        <div class="aterm-line out">skills, deliver top-notch work, and build</div>
+                        <div class="aterm-line out">lasting client relationships. Dedicated to</div>
+                        <div class="aterm-line out">quality, communication &amp; exceeding expectations.</div>
+
+                        <div class="aterm-line gap"><span class="prompt">$</span><span class="cmd"> ls -la
+                                skills/</span></div>
+                        <div class="aterm-line out">
+                            <span class="val-purple">python</span>&nbsp;&nbsp;
+                            <span class="val-orange">kali-linux</span>&nbsp;&nbsp;
+                            <span class="val-blue">Web-Security</span>&nbsp;&nbsp;
+                            <span class="val-aqua">Burp-Suite</span>
+                        </div>
+
+                        <div class="aterm-line gap"><span class="prompt">$</span><span class="cmd"> cat
+                                interests.json</span></div>
+                        <div class="aterm-line out">&#123;</div>
+                        <div class="aterm-line out">&nbsp;&nbsp;<span class="val-yellow">"primary"</span>: <span
+                                class="val-aqua">"Cybersecurity &amp; Ethical Hacking"</span>,</div>
+                        <div class="aterm-line out">&nbsp;&nbsp;<span class="val-yellow">"secondary"</span>: <span
+                                class="val-aqua">"Web Development"</span>,</div>
+                        <div class="aterm-line out">&nbsp;&nbsp;<span class="val-yellow">"currently_learning"</span>:
+                            <span class="val-aqua">"Java, Python"</span>,</div>
+                        <div class="aterm-line out">&nbsp;&nbsp;<span class="val-yellow">"tools"</span>: <span
+                                class="val-aqua">"Kali, Burp Suite, Nmap, Metasploit"</span></div>
+                        <div class="aterm-line out">&#125;</div>
+
+                        <div class="aterm-line gap"><span class="prompt cursor"></span></div>
+                    </div>
+                </div>
+
+                <!-- Right column -->
+                <div class="about-right-col reveal">
+
+                    <div class="about-terminal">
+                        <div class="term-bar">
+                            <span class="dot r"></span>
+                            <span class="dot y"></span>
+                            <span class="dot g"></span>
+                            <span class="term-title">id.sh</span>
+                        </div>
+                        <div class="about-term-body">
+                            <div class="aterm-line"><span class="prompt">$</span><span class="cmd"> cat
+                                    personal_info.conf</span></div>
+                            <div class="aterm-line out"><span class="val-yellow">NAME</span>=<span
+                                    class="val-aqua">"Prashant Kc"</span></div>
+                            <div class="aterm-line out"><span class="val-yellow">LOCATION</span>=<span
+                                    class="val-aqua">"Nepal &#127475;&#127477;"</span></div>
+                            <div class="aterm-line out"><span class="val-yellow">EMAIL</span>=<span
+                                    class="val-aqua">"46prashant46@gmail.com"</span></div>
+                            <div class="aterm-line out"><span class="val-yellow">GITHUB</span>=<span
+                                    class="val-aqua">"kc-prashant"</span></div>
+                            <div class="aterm-line gap"><span class="prompt cursor"></span></div>
+                        </div>
+                    </div>
+
+                    <div class="stat-grid stagger">
+                        <div class="stat-card">
+                            <div class="stat-num">5+</div>
+                            <div class="stat-lbl">Projects</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-num">1+</div>
+                            <div class="stat-lbl">Yr Experience</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-num">&#8734;</div>
+                            <div class="stat-lbl">Curiosity</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-num">&#9749;</div>
+                            <div class="stat-lbl">Coffee</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── EDUCATION ── -->
+    <section id="education">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-label">academic_path</p>
+                <h2 class="section-title">My <span>Education</span></h2>
+            </div>
+            <div class="edu-timeline reveal">
+                <div class="edu-item">
+                    <div class="edu-card">
+                        <div class="edu-year">&#128197; 2006 &ndash; 2019</div>
+                        <div class="edu-degree">Secondary Level (SEE)</div>
+                        <div class="edu-school">Shree Himalayan English Secondary Boarding School</div>
+                    </div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-card">
+                        <div class="edu-year">&#128197; 2019 &ndash; 2021</div>
+                        <div class="edu-degree">Higher Secondary (+2) &mdash; Computer Science</div>
+                        <div class="edu-school">ED-Mark Academy</div>
+                    </div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-card">
+                        <div class="edu-year">&#128197; 2022 &ndash; Present</div>
+                        <div class="edu-degree">Bachelor of Computer Applications (BCA) &mdash; Running</div>
+                        <div class="edu-school">Nepalaya Education Foundation</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── SKILLS ── -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-label">what_i_know</p>
+                <h2 class="section-title">My <span>Skills</span></h2>
+            </div>
+            <div class="skills-grid stagger">
+                <div class="skill-card">
+                    <div class="skill-icon">&#128013;</div>
+                    <div class="skill-name">Python</div>
+                    <p class="skill-desc">Scripting, automation, and cybersecurity tooling. Proficient in OOP, working
+                        with libraries, and building efficient back-end solutions.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Scripting</span>
+                        <span class="tag">Automation</span>
+                        <span class="tag">OOP</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">&#128272;</div>
+                    <div class="skill-name">Kali Linux</div>
+                    <p class="skill-desc">Penetration testing, vulnerability assessment, and digital forensics.
+                        Experienced with Metasploit, Nmap, Wireshark, and Burp Suite.</p>
+                    <div class="skill-tags">
+                        <span class="tag">PenTest</span>
+                        <span class="tag">Nmap</span>
+                        <span class="tag">Burp Suite</span>
+                        <span class="tag">Metasploit</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">&#127760;</div>
+                    <div class="skill-name">HTML / CSS / JS</div>
+                    <p class="skill-desc">Building well-structured, semantic, and responsive web layouts with
+                        cross-browser compatibility and an eye for clean UX.</p>
+                    <div class="skill-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Responsive</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">&#128226;</div>
+                    <div class="skill-name">Web Security</div>
+                    <p class="skill-desc">Aspiring cybersecurity enthusiast focused on web security, learning to
+                        identify vulnerabilities and protect web
+                        applications through ethical hacking and hands-on practice.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Web Secutiyt</span>
+                        <span class="tag">Cybersecurity</span>
+                        <span class="tag">Ethical Hacking</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── PROJECTS ── -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-label">things_i_built</p>
+                <h2 class="section-title">Featured <span>Projects</span></h2>
+            </div>
+            <div class="proj-grid stagger">
+
+                <div class="proj-card">
+                    <div class="proj-head">
+                        <div class="proj-icon">&#128737;&#65039;</div>
+                        <a href="https://github.com/kc-prashant/" target="_blank" class="proj-link" title="GitHub">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="proj-name">VulnScanner</div>
+                    <p class="proj-desc">Automated web vulnerability scanner that detects SQL injection, XSS, CSRF, and
+                        other common security issues in web applications.</p>
+                    <div class="proj-tags"><span>Python</span><span>Security</span><span>Automation</span></div>
+                </div>
+
+                <div class="proj-card">
+                    <div class="proj-head">
+                        <div class="proj-icon">&#128722;</div>
+                        <a href="https://collegecart.page.gd" target="_blank" class="proj-link" title="Visit site">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                <polyline points="15 3 21 3 21 9" />
+                                <line x1="10" y1="14" x2="21" y2="3" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="proj-name">College Cart</div>
+                    <p class="proj-desc">E-commerce platform for college students to buy and sell textbooks,
+                        electronics, and supplies with a clean, user-friendly interface.</p>
+                    <div class="proj-tags"><span>PHP</span><span>PostgreSQL</span><span>E-commerce</span></div>
+                </div>
+
+                <div class="proj-card">
+                    <div class="proj-head">
+                        <div class="proj-icon">&#128202;</div>
+                        <a href="https://github.com/kc-prashant/" target="_blank" class="proj-link" title="GitHub">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="proj-name">DataViz Dashboard</div>
+                    <p class="proj-desc">Real-time analytics dashboard with interactive charts, live data filtering, and
+                        WebSocket-powered updates for dynamic data visualization.</p>
+                    <div class="proj-tags"><span>React</span><span>D3.js</span><span>WebSocket</span></div>
+                </div>
+
+                <div class="proj-card">
+                    <div class="proj-head">
+                        <div class="proj-icon">&#128269;</div>
+                        <a href="https://github.com/kc-prashant/" target="_blank" class="proj-link" title="GitHub">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="proj-name">Network Recon Tool</div>
+                    <p class="proj-desc">Python-based network reconnaissance utility wrapping Nmap for fast host
+                        discovery, port scanning, and service fingerprinting reports.</p>
+                    <div class="proj-tags"><span>Python</span><span>Nmap</span><span>Networking</span></div>
+                </div>
+
+                <div class="proj-card">
+                    <div class="proj-head">
+                        <div class="proj-icon">&#127760;</div>
+                        <a href="https://prashantkc46.com.np" target="_blank" class="proj-link" title="Visit site">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                <polyline points="15 3 21 3 21 9" />
+                                <line x1="10" y1="14" x2="21" y2="3" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="proj-name">Personal Portfolio</div>
+                    <p class="proj-desc">My personal portfolio website showcasing my projects, skills, and education
+                        &mdash; built with vanilla HTML, CSS, and JavaScript.</p>
+                    <div class="proj-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CONTACT ── -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-label">get_in_touch</p>
+                <h2 class="section-title">Contact <span>Me</span></h2>
+            </div>
+            <div class="contact-grid">
+
+                <div class="contact-info reveal">
+                    <a href="mailto:46prashant46@gmail.com" class="contact-item">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                        46prashant46@gmail.com
+                    </a>
+                    <a href="https://github.com/kc-prashant/" target="_blank" class="contact-item">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                        </svg>
+                        github.com/kc-prashant
+                    </a>
+                    <a href="https://www.linkedin.com/in/prashant-kc-57ab20241/" target="_blank" class="contact-item">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <rect x="2" y="9" width="4" height="12" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg>
+                        linkedin.com/in/prashant-kc
+                    </a>
+                </div>
+
+                <form class="contact-form reveal" action="https://formspree.io/f/xeoakaan" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fname">// name</label>
+                            <input type="text" id="fname" name="name" placeholder="Your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="femail">// email</label>
+                            <input type="email" id="femail" name="email" placeholder="your@email.com" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fphone">// phone</label>
+                            <input type="tel" id="fphone" name="phone" placeholder="Mobile number">
+                        </div>
+                        <div class="form-group">
+                            <label for="fsubject">// subject</label>
+                            <input type="text" id="fsubject" name="subject" placeholder="Subject" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="fmessage">// message</label>
+                        <textarea id="fmessage" name="message" rows="5" placeholder="Your message..."
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">$ send_message &rarr;</button>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <p class="footer-copy">&copy; 2026 <span>Prashant Kc</span> &middot; Built with &#10084;&#65039; &amp;
+                    &#9749; </p>
+                <div class="footer-socials">
+                    <a href="https://github.com/kc-prashant/" target="_blank" class="social-link" title="GitHub">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/prashant-kc-57ab20241/" target="_blank" class="social-link"
+                        title="LinkedIn">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <rect x="2" y="9" width="4" height="12" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
