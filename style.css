@@ -283,15 +283,7 @@ nav a.active {
 }
 
 /* Terminal (Hero) */
-.profile-photo {
-    width: 150px;
-    max-width: 150px;
-    border-radius: 10px;
-    border: 2px solid #00ff9c;
-    box-shadow: 0 0 12px #00ff9c;
-    display: block;
-    margin-top: 10px;
-}
+
 .terminal {
     background: var(--bg1);
     border: 1px solid var(--bg3);
